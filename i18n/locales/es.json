@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Hola",
+    "projects": "Proyectos",
+    "brands": "Marcas",
+    "contact": "Contacto",
+    "about": "Sobre mí"
+  },
+  "about": {
+    "label": "Fundador de Kelek Home",
+    "name": "Hola, soy Jesús",
+    "available": "Disponible para colaboraciones",
+    "intro": "Soy artesano madrileño con más de 10 años dando forma a la madera. Creo muebles únicos que combinan funcionalidad, diseño y un profundo respeto por los materiales naturales.",
+    "story_title": "Mi historia",
+    "story_p1": "Todo empezó en el taller de mi abuelo, donde aprendí que la madera tiene vida propia. Cada veta, cada nudo, cada color tiene algo que contar. Desde pequeño pasaba las tardes lijando, ensamblando y viendo cómo piezas sin forma se convertían en objetos con alma.",
+    "story_p2": "Años después, decidí convertir esa pasión en mi profesión. Fundé Kelek Home con una idea clara: crear muebles que duren generaciones, hechos a mano con materiales de origen responsable y un diseño que no sigue tendencias, sino que las trasciende.",
+    "val1_title": "Hecho con amor",
+    "val1_desc": "Cada pieza la trabajo personalmente, desde el boceto hasta el acabado final.",
+    "val2_title": "Materiales naturales",
+    "val2_desc": "Solo madera de origen responsable y acabados ecológicos sin tóxicos.",
+    "val3_title": "Diseño atemporal",
+    "val3_desc": "Estética limpia que encaja en cualquier hogar y no pasa de moda.",
+    "workshop_title": "Mi taller",
+    "workshop_desc": "Trabajo desde un pequeño taller en las afueras de Madrid. Aquí cada pieza cobra vida entre herramientas tradicionales, el olor a madera recién trabajada y mucha paciencia."
+  },
+  "profile": {
+    "available": "Disponible para colaboraciones",
+    "bio": "El rincón artesanal donde la madera es una pasión. Piezas únicas con alma natural."
+  },
+  "stats": {
+    "followers": "Seguidores",
+    "posts": "Publicaciones",
+    "years": "Años activos"
+  },
+  "index": {
+    "links_title": "Mis links"
+  },
+  "catalog": {
+    "badge": "Colección artesanal",
+    "headline_1": "Piezas únicas,",
+    "headline_2": "hechas a mano",
+    "cta": "Ver catálogo"
+  },
+  "why": {
+    "title": "¿Por qué artesanal?",
+    "subtitle": "Cada pieza tiene una historia detrás.",
+    "handmade_title": "Hecho a mano",
+    "handmade_desc": "Cada pieza es creada personalmente, sin producción en serie ni atajos.",
+    "sustainable_title": "Madera sostenible",
+    "sustainable_desc": "Usamos maderas naturales de origen responsable con acabados ecológicos.",
+    "unique_title": "Pieza única",
+    "unique_desc": "No existen dos iguales. Tu mueble es exclusivo y tiene carácter propio."
+  },
+  "process": {
+    "title": "Mi proceso",
+    "subtitle": "Del bosque a tu hogar, paso a paso.",
+    "sketch_title": "Boceto",
+    "sketch_desc": "Diseño y planificación de cada detalle.",
+    "selection_title": "Selección",
+    "selection_desc": "Elijo la madera perfecta para cada pieza.",
+    "craft_title": "Fabricación",
+    "craft_desc": "Trabajo manual con herramientas tradicionales.",
+    "home_title": "Tu hogar",
+    "home_desc": "La pieza llega lista para transformar tu espacio."
+  },
+  "testimonials": {
+    "title": "Lo que dicen",
+    "subtitle": "Clientes que ya tienen una pieza de Kelek Home.",
+    "quote_1": "Compré una mesa de centro y es simplemente preciosa. La calidad de la madera y el acabado son impecables. Vale cada euro.",
+    "quote_2": "Jesús es un artesano increíble. Mi estantería modular quedó perfecta para el salón. Trato cercano y envío muy rápido.",
+    "quote_3": "Llevaba años buscando muebles con carácter. Por fin encontré lo que quería. Cada pieza es una obra de arte."
+  },
+  "newsletter": {
+    "title": "Sé el primero en saberlo",
+    "subtitle": "Avísame cuando haya una nueva pieza disponible. Sin spam, solo novedades artesanales.",
+    "placeholder": "tu{'@'}email.com",
+    "cta": "Avisarme",
+    "success": "✓ Apuntado",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  }
+}

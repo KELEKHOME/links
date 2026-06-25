@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Hello",
+    "projects": "Projects",
+    "brands": "Brands",
+    "contact": "Contact",
+    "about": "About me"
+  },
+  "about": {
+    "label": "Founder of Kelek Home",
+    "name": "Hi, I'm Jesús",
+    "available": "Available for collaborations",
+    "intro": "I'm a craftsman from Madrid with over 10 years shaping wood. I create unique furniture that combines functionality, design and a deep respect for natural materials.",
+    "story_title": "My story",
+    "story_p1": "It all started in my grandfather's workshop, where I learned that wood has a life of its own. Every grain, every knot, every colour has a story to tell. From a young age I spent my afternoons sanding, assembling and watching shapeless pieces become objects with soul.",
+    "story_p2": "Years later, I decided to turn that passion into my profession. I founded Kelek Home with a clear idea: to create furniture that lasts generations, handmade with responsibly sourced materials and a design that doesn't follow trends — it transcends them.",
+    "val1_title": "Made with love",
+    "val1_desc": "I personally craft every piece, from the sketch to the final finish.",
+    "val2_title": "Natural materials",
+    "val2_desc": "Only responsibly sourced wood and non-toxic eco-friendly finishes.",
+    "val3_title": "Timeless design",
+    "val3_desc": "Clean aesthetics that fit any home and never go out of style.",
+    "workshop_title": "My workshop",
+    "workshop_desc": "I work from a small workshop on the outskirts of Madrid. Here every piece comes to life among traditional tools, the smell of freshly worked wood and a lot of patience."
+  },
+  "profile": {
+    "available": "Available for collaborations",
+    "bio": "My name is Jesús and at KELEK HOME you won't just find a handcrafted furniture corner — you'll also find a passion for handmade work and a nod to nature."
+  },
+  "stats": {
+    "followers": "Followers",
+    "posts": "Posts",
+    "years": "Active years"
+  },
+  "index": {
+    "links_title": "My links"
+  },
+  "catalog": {
+    "badge": "Artisan collection",
+    "headline_1": "Unique pieces,",
+    "headline_2": "handcrafted",
+    "cta": "View catalogue"
+  },
+  "why": {
+    "title": "Why artisanal?",
+    "subtitle": "Every piece has a story behind it.",
+    "handmade_title": "Handmade",
+    "handmade_desc": "Every piece is personally crafted, with no mass production or shortcuts.",
+    "sustainable_title": "Sustainable wood",
+    "sustainable_desc": "We use natural woods from responsible sources with eco-friendly finishes.",
+    "unique_title": "One of a kind",
+    "unique_desc": "No two are the same. Your furniture is exclusive and has its own character."
+  },
+  "process": {
+    "title": "My process",
+    "subtitle": "From the forest to your home, step by step.",
+    "sketch_title": "Sketch",
+    "sketch_desc": "Design and planning of every detail.",
+    "selection_title": "Selection",
+    "selection_desc": "I choose the perfect wood for each piece.",
+    "craft_title": "Crafting",
+    "craft_desc": "Manual work with traditional tools.",
+    "home_title": "Your home",
+    "home_desc": "The piece arrives ready to transform your space."
+  },
+  "testimonials": {
+    "title": "What they say",
+    "subtitle": "Customers who already have a Kelek Home piece.",
+    "quote_1": "I bought a coffee table and it's simply beautiful. The wood quality and finish are impeccable. Worth every penny.",
+    "quote_2": "Jesús is an incredible craftsman. My modular shelving unit looked perfect in the living room. Personal service and very fast delivery.",
+    "quote_3": "I'd been looking for furniture with character for years. I finally found what I wanted. Every piece is a work of art."
+  },
+  "newsletter": {
+    "title": "Be the first to know",
+    "subtitle": "Notify me when a new piece is available. No spam, just artisan news.",
+    "placeholder": "your{'@'}email.com",
+    "cta": "Notify me",
+    "success": "✓ Subscribed",
+    "error": "Something went wrong. Please try again."
+  }
+}
