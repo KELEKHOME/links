@@ -103,10 +103,10 @@ const route = useRoute()
 watch(() => route.path, () => { menuOpen.value = false })
 
 const navItems = computed(() => [
-  { label: t('nav.home'),     to: '/',           icon: 'mdi:home-outline' },
-  { label: t('nav.about'),    to: '/sobre-mi',   icon: 'mdi:account-outline' },
-  { label: t('nav.projects'), to: '/proyectos',  icon: 'mdi:hammer-wrench' },
-  { label: t('nav.brands'),   to: '/marcas',     icon: 'mdi:tag-outline' },
-  { label: t('nav.contact'),  to: '/contacto',   icon: 'mdi:email-outline' }
+  { label: t('nav.home'),     to: '/hola',           icon: 'mdi:home-outline' },
+  { label: t('nav.about'),    to: '/hola/sobre-mi',  icon: 'mdi:account-outline' },
+  { label: t('nav.projects'), to: '/hola/proyectos', icon: 'mdi:hammer-wrench' },
+  { label: t('nav.brands'),   to: '/hola/marcas',    icon: 'mdi:tag-outline' },
+  { label: t('nav.contact'),  to: '/hola/contacto',  icon: 'mdi:email-outline' }
 ])
 </script>

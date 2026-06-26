@@ -47,7 +47,7 @@
     <!-- Badge disponible -->
     <div class="blur-in blur-in-d3 mt-3 flex items-center justify-center gap-2">
       <NuxtLink
-        to="/marcas"
+        to="/hola/marcas"
         class="group flex items-center gap-2 px-3 py-1.5 rounded-full border border-transparent transition-all duration-300
                hover:border-green-400/70 hover:bg-green-500/10 hover:shadow-[0_0_14px_rgba(74,222,128,0.25)] hover:-translate-y-0.5"
       >
