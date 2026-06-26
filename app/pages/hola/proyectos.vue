@@ -58,7 +58,7 @@ const projects = [
             />
           </div>
           <div class="p-4">
-            <h3 class="font-semibold text-sm">{{ project.title }}</h3>
+            <h2 class="font-semibold text-sm">{{ project.title }}</h2>
             <p class="text-xs opacity-50 mt-1 leading-relaxed">{{ project.description }}</p>
             <div class="flex gap-1.5 mt-3 flex-wrap">
               <span
