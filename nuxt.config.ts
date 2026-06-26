@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/motion', '@nuxt/icon', '@nuxtjs/i18n', 'nuxt-umami'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/motion', '@nuxt/icon', '@nuxtjs/i18n', 'nuxt-umami', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-schema-org', 'nuxt-og-image', '@nuxt/image'],
   css: ['~/assets/css/main.css', '~/assets/css/transitions.css'],
   icon: {
     serverBundle: {
@@ -91,6 +91,33 @@ export default defineNuxtConfig({
       fallbackLocale: 'es'
     }
   },
+  // Configuración global del sitio (usada por @nuxtjs/seo y nuxt-og-image)
+  site: {
+    url: 'https://kelek.vercel.app',
+    name: 'Kelek Home',
+    description: 'Muebles artesanales hechos a mano por Jesús. Piezas únicas en madera sostenible para tu hogar.',
+    defaultLocale: 'es',
+  },
+
+  // @nuxt/image — optimización automática de imágenes
+  image: {
+    // Dominos externos permitidos para optimización
+    domains: ['images.unsplash.com', 'graph.instagram.com', 'cdn.instagram.com', 'scontent.cdninstagram.com'],
+    // Proveedor por defecto en Vercel
+    provider: 'vercel',
+    // Fallback a ipx si no está en Vercel (dev local)
+    providers: {
+      ipx: {}
+    },
+    quality: 80,
+    format: ['webp', 'jpg'],
+  },
+
+  // nuxt-og-image — Open Graph automático
+  ogImage: {
+    fonts: ['Public+Sans:400', 'Public+Sans:700'],
+  },
+
   umami: {
     enabled: true,
     host: process.env.NUXT_PUBLIC_UMAMI_HOST ?? 'https://cloud.umami.is',
