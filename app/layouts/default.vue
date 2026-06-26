@@ -10,7 +10,7 @@
       <NuxtPage />
     </main>
     <AppFooter />
-    <CookieBanner />
+
     <CustomCursor />
     <ShareButton />
   </div>
