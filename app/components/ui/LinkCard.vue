@@ -33,12 +33,12 @@ const props = defineProps<{
 
 const iconColor = computed(() => props.color ?? 'currentColor')
 
-const { gtag } = useGtag()
+const umami = useUmami()
 
 function trackClick() {
-  gtag('event', 'link_click', {
-    link_title: props.title,
-    link_url: props.url
+  umami.track('link_click', {
+    title: props.title,
+    url: props.url
   })
 }
 </script>
