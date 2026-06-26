@@ -2,28 +2,22 @@
 <template>
   <Transition name="slide-up">
     <div
-      v-if="!accepted"
+      v-if="!dismissed"
       class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm z-50
              rounded-2xl border px-5 py-4 shadow-xl backdrop-blur
              bg-white border-zinc-200 text-zinc-900
              dark:bg-zinc-900/90 dark:border-white/10 dark:text-white"
     >
       <p class="text-sm opacity-80 mb-3">
-        Usamos cookies analíticas (Google Analytics) para entender cómo se usa esta página.
-        Sin datos personales ni publicidad.
+        Esta web usa cookies técnicas propias. No rastreamos usuarios ni usamos publicidad.
+        Las analíticas son anónimas y respetuosas con tu privacidad.
       </p>
       <div class="flex gap-2">
         <button
           class="flex-1 py-2 rounded-xl bg-zinc-900 text-white text-sm font-medium hover:opacity-90 transition dark:bg-white dark:text-black"
-          @click="accept"
+          @click="dismiss"
         >
-          Aceptar
-        </button>
-        <button
-          class="flex-1 py-2 rounded-xl bg-black/10 text-sm hover:bg-black/20 transition dark:bg-white/10 dark:hover:bg-white/20"
-          @click="decline"
-        >
-          Rechazar
+          Entendido
         </button>
       </div>
     </div>
@@ -31,24 +25,15 @@
 </template>
 
 <script setup lang="ts">
-const { initialize } = useGtag()
-
-const accepted = ref(false)
+const dismissed = ref(false)
 
 onMounted(() => {
-  accepted.value = localStorage.getItem('cookie-consent') === 'accepted'
-  if (accepted.value) initialize()
+  dismissed.value = !!localStorage.getItem('cookie-notice-dismissed')
 })
 
-function accept() {
-  localStorage.setItem('cookie-consent', 'accepted')
-  accepted.value = true
-  initialize()
-}
-
-function decline() {
-  localStorage.setItem('cookie-consent', 'declined')
-  accepted.value = true
+function dismiss() {
+  localStorage.setItem('cookie-notice-dismissed', '1')
+  dismissed.value = true
 }
 </script>
 

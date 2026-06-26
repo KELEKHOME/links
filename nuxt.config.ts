@@ -2,14 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-    '@vueuse/motion',
-    '@nuxt/icon',
-    'nuxt-gtag',
-    '@nuxtjs/i18n'
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/motion', '@nuxt/icon', '@nuxtjs/i18n', 'nuxt-umami'],
   css: ['~/assets/css/main.css', '~/assets/css/transitions.css'],
   icon: {
     serverBundle: {
@@ -98,9 +91,12 @@ export default defineNuxtConfig({
       fallbackLocale: 'es'
     }
   },
-  gtag: {
-    enabled: false, // activado solo tras aceptar cookies
-    id: process.env.NUXT_PUBLIC_GTAG_ID
+  umami: {
+    enabled: true,
+    host: process.env.NUXT_PUBLIC_UMAMI_HOST ?? 'https://cloud.umami.is',
+    id: process.env.NUXT_PUBLIC_UMAMI_ID ?? '',
+    autoTrack: true,
+    ignoreLocalhost: true,
   },
   runtimeConfig: {
     instagramToken: process.env.INSTAGRAM_ACCESS_TOKEN ?? '',
