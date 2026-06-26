@@ -5,7 +5,7 @@
       v-for="s in socials"
       :key="s.url"
       :href="s.url"
-      :aria-label="s.title"
+      :aria-label="`${s.title}, ${formatCount(s.followers)} seguidores`"
       target="_blank"
       rel="noopener noreferrer"
       class="social-card group flex items-center gap-3 px-5 py-3 rounded-2xl

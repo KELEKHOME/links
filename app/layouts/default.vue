@@ -6,9 +6,9 @@
   >
     <NuxtRouteAnnouncer />
     <AppHeader />
-    <div class="flex-1">
+    <main class="flex-1">
       <NuxtPage />
-    </div>
+    </main>
     <AppFooter />
     <CookieBanner />
     <CustomCursor />
