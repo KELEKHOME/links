@@ -37,6 +37,7 @@ export default defineNuxtConfig({
         'mdi:home-outline',
         'mdi:account-outline',
         'mdi:hammer-wrench',
+        'mdi:alert-circle-outline',
         'mdi:tag-outline',
         'mdi:hand-heart-outline',
         'mdi:tree-outline',
