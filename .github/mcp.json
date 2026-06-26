@@ -11,6 +11,11 @@
       "url": "https://nuxt.com/mcp",
       "headers": {},
       "tools": ["*"]
+    },
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com",
+      "tools": ["*"]
     }
   }
 }
