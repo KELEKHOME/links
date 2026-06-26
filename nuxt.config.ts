@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/motion', '@nuxt/icon', '@nuxtjs/i18n', 'nuxt-umami', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-schema-org', 'nuxt-og-image', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@vueuse/motion', '@nuxt/icon', '@nuxtjs/i18n', 'nuxt-umami', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-og-image', '@nuxt/image'],
   css: ['~/assets/css/main.css', '~/assets/css/transitions.css'],
   icon: {
     serverBundle: {
