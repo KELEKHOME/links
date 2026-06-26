@@ -33,10 +33,8 @@ const props = defineProps<{
 
 const iconColor = computed(() => props.color ?? 'currentColor')
 
-const umami = useUmami()
-
 function trackClick() {
-  umami.track('link_click', {
+  umTrackEvent('link_click', {
     title: props.title,
     url: props.url
   })
