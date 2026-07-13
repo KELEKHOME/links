@@ -17,7 +17,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="px-4 pt-24 pb-4">
+  <div class="px-4 pt-28 pb-4">
     <div class="w-full max-w-2xl mx-auto">
 
       <!-- Profile -->
