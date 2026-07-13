@@ -7,11 +7,17 @@
 
     <!-- ─── Desktop ─── -->
     <nav
-      class="hidden sm:flex items-center gap-0 rounded-full border backdrop-blur-xl transition-all duration-500"
+      class="hidden sm:flex relative items-center gap-0 rounded-full border backdrop-blur-xl transition-all duration-500"
       :class="scrolled
         ? 'px-2 py-1 shadow-2xl shadow-black/20 bg-white/60 dark:bg-zinc-950/60 border-zinc-200/50 dark:border-white/8'
         : 'px-2.5 py-1.5 shadow-xl shadow-black/8 bg-white/80 dark:bg-zinc-900/80 border-zinc-200/60 dark:border-white/10'"
     >
+      <!-- Bola animada del tab activo -->
+      <span
+        class="pointer-events-none absolute -top-[3px] w-[7px] h-[7px] rounded-full bg-amber-400 shadow-[0_0_10px_2px_rgba(251,191,36,0.65)] z-20"
+        :class="[bubbleReady ? 'tab-bubble' : 'opacity-0', isResyncing && 'tab-bubble--instant']"
+        :style="{ left: bubbleLeft + 'px' }"
+      />
 
       <!-- Badge: aparece al hacer scroll (max-width trick, sin v-if) -->
       <div
@@ -23,8 +29,9 @@
       <!-- Nav links -->
       <div class="flex items-center">
         <NuxtLink
-          v-for="item in navItems"
+          v-for="(item, i) in navItems"
           :key="item.label"
+          :ref="(el) => setLinkRef(el, i)"
           :to="item.to"
           class="group relative flex items-center rounded-xl font-medium whitespace-nowrap transition-all duration-200"
           :class="[
@@ -33,14 +40,9 @@
           ]"
           active-class="is-active"
         >
-          <!-- Background: active highlight (línea ámbar inferior) -->
-          <span
-            v-if="isActive(item.to)"
-            class="absolute bottom-0 inset-x-3 h-[2px] rounded-full bg-amber-400 shadow-sm shadow-amber-400/50 pointer-events-none"
-          />
           <!-- Background: hover fill (solo en no-activos) -->
           <span
-            v-else
+            v-if="!isActive(item.to)"
             class="absolute inset-x-0 inset-y-0.5 rounded-xl pointer-events-none transition-all duration-200 opacity-0 group-hover:opacity-100 bg-zinc-100/90 dark:bg-white/[0.07]"
           />
           <!-- Amber glow en hover (no activo) -->
@@ -222,6 +224,50 @@ const activeLabel = computed(() => {
 function isActive(to: string) {
   return route.path === to || (to !== '/hola' && route.path.startsWith(to))
 }
+
+// ─── Bola animada del tab activo ───
+const linkRefs = ref<(HTMLElement | null)[]>([])
+const bubbleLeft = ref(0)
+const bubbleReady = ref(false)
+const isResyncing = ref(false)
+
+function setLinkRef(el: any, i: number) {
+  linkRefs.value[i] = (el?.$el ?? el) as HTMLElement | null
+}
+
+function updateBubble() {
+  const idx = navItems.value.findIndex(item => isActive(item.to))
+  const el = linkRefs.value[idx]
+  if (!el) return
+  bubbleLeft.value = el.offsetLeft + el.offsetWidth / 2
+  bubbleReady.value = true
+}
+
+// Sigue en tiempo real el reflow del nav (colapso de badge/controles al
+// hacer scroll) para que la bola nunca quede descentrada mientras anima.
+function resyncBubbleDuring(ms: number) {
+  isResyncing.value = true
+  const start = performance.now()
+  function step() {
+    updateBubble()
+    if (performance.now() - start < ms) {
+      requestAnimationFrame(step)
+    } else {
+      isResyncing.value = false
+    }
+  }
+  requestAnimationFrame(step)
+}
+
+watch(() => route.path, () => nextTick(updateBubble))
+watch(scrolled, () => nextTick(() => resyncBubbleDuring(550)))
+
+onMounted(() => {
+  nextTick(updateBubble)
+  const handler = () => updateBubble()
+  window.addEventListener('resize', handler)
+  onUnmounted(() => window.removeEventListener('resize', handler))
+})
 </script>
 
 <style scoped>
@@ -231,5 +277,20 @@ function isActive(to: string) {
 @keyframes menuItemIn {
   from { opacity: 0; transform: translateY(6px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+.tab-bubble {
+  transform: translateX(-50%);
+  animation: bubblePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: left 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+.tab-bubble--instant {
+  transition: none;
+  animation: none;
+}
+@keyframes bubblePop {
+  0%   { transform: translateX(-50%) translateY(6px) scale(0.4); opacity: 0; }
+  60%  { transform: translateX(-50%) translateY(-2px) scale(1.15); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
 }
 </style>
