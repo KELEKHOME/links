@@ -12,9 +12,9 @@
         ? 'px-2 py-1 shadow-2xl shadow-black/20 bg-white/60 dark:bg-zinc-950/60 border-zinc-200/50 dark:border-white/8'
         : 'px-2.5 py-1.5 shadow-xl shadow-black/8 bg-white/80 dark:bg-zinc-900/80 border-zinc-200/60 dark:border-white/10'"
     >
-      <!-- Bola animada del tab activo -->
+      <!-- Barra animada del tab activo -->
       <span
-        class="pointer-events-none absolute -top-[3px] w-[7px] h-[7px] rounded-full bg-amber-400 shadow-[0_0_10px_2px_rgba(251,191,36,0.65)] z-20"
+        class="pointer-events-none absolute -top-[2.5px] h-[3px] w-5 rounded-full bg-amber-400 shadow-[0_0_8px_2px_rgba(251,191,36,0.55)] z-20"
         :class="[bubbleReady ? 'tab-bubble' : 'opacity-0', isResyncing && 'tab-bubble--instant']"
         :style="{ left: bubbleLeft + 'px' }"
       />
@@ -225,7 +225,7 @@ function isActive(to: string) {
   return route.path === to || (to !== '/hola' && route.path.startsWith(to))
 }
 
-// ─── Bola animada del tab activo ───
+// ─── Barra animada del tab activo ───
 const linkRefs = ref<(HTMLElement | null)[]>([])
 const bubbleLeft = ref(0)
 const bubbleReady = ref(false)
@@ -244,7 +244,7 @@ function updateBubble() {
 }
 
 // Sigue en tiempo real el reflow del nav (colapso de badge/controles al
-// hacer scroll) para que la bola nunca quede descentrada mientras anima.
+// hacer scroll) para que el indicador nunca quede descentrado mientras anima.
 function resyncBubbleDuring(ms: number) {
   isResyncing.value = true
   const start = performance.now()
@@ -293,4 +293,5 @@ onMounted(() => {
   60%  { transform: translateX(-50%) translateY(-2px) scale(1.15); opacity: 1; }
   100% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
 }
+
 </style>
