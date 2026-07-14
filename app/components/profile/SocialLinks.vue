@@ -41,8 +41,8 @@ const socials = computed(() => [
     key: 'instagram',
     title: 'Instagram',
     url: 'https://www.instagram.com/kelek.home',
-    icon: isDark.value ? 'simple-icons:instagram' : 'logos:instagram-icon',
-    iconClass: isDark.value ? 'text-white' : '',
+    icon: 'simple-icons:instagram',
+    iconClass: 'instagram-icon',
     followers: 5000
   },
   {
@@ -94,6 +94,14 @@ onMounted(() => {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.15),
     0 8px 24px rgba(255, 255, 255, 0.12);
+}
+
+/* Gradiente oficial de Instagram */
+:deep(.instagram-icon) {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
 
