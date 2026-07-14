@@ -23,13 +23,15 @@ const visible = ref(false)
 const hovered = ref(false)
 
 onMounted(() => {
-  // Solo en dispositivos con mouse
-  if (window.matchMedia('(pointer: fine)').matches) {
-    document.body.style.cursor = 'none'
-    visible.value = true
-  }
+  if (!window.matchMedia('(pointer: fine) and (hover: hover)').matches) return
 
-  const onMove = (e: MouseEvent) => { x.value = e.clientX; y.value = e.clientY }
+  document.body.style.cursor = 'none'
+
+  const onMove = (e: MouseEvent) => {
+    x.value = e.clientX
+    y.value = e.clientY
+    if (!visible.value) visible.value = true
+  }
   const onEnter = (e: MouseEvent) => {
     const el = e.target as HTMLElement
     if (el.closest('a, button, [role="button"]')) hovered.value = true

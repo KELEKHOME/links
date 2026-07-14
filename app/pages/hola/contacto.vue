@@ -19,7 +19,7 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <div class="flex items-center justify-center px-4 pt-24 pb-12">
+  <div class="flex items-center justify-center px-4 pt-28 pb-12">
     <div class="w-full max-w-2xl">
       <div class="text-center mb-8">
         <h1 class="text-4xl font-bold tracking-tight">Contacto</h1>
