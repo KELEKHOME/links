@@ -41,8 +41,8 @@ const socials = computed(() => [
     key: 'instagram',
     title: 'Instagram',
     url: 'https://www.instagram.com/kelek.home',
-    icon: 'skill-icons:instagram',
-    iconClass: '',
+    icon: 'simple-icons:instagram',
+    iconClass: 'instagram-gradient',
     followers: 5000
   },
   {
@@ -94,6 +94,11 @@ onMounted(() => {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.15),
     0 8px 24px rgba(255, 255, 255, 0.12);
+}
+
+/* Gradiente oficial de Instagram aplicado sobre el icono monocromo (renderizado como máscara CSS) */
+.instagram-gradient {
+  background: linear-gradient(45deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%) !important;
 }
 
 </style>
