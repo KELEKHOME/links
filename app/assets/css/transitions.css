@@ -1,0 +1,82 @@
+/* Page transition: fade (Hola) */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Page transition: slide-right (Proyectos) */
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+/* Page transition: zoom (Marcas) */
+.zoom-enter-active,
+.zoom-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.zoom-enter-from {
+  opacity: 0;
+  transform: scale(0.94);
+}
+.zoom-leave-to {
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+/* Page transition: slide-up (Contacto) */
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* ---- Blur-in entrance animation (página Hola) ---- */
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+.blur-in {
+  opacity: 0;
+  animation: blur-in 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.blur-in-d1  { animation-delay: 0ms; }
+.blur-in-d2  { animation-delay: 180ms; }
+.blur-in-d3  { animation-delay: 340ms; }
+.blur-in-d4  { animation-delay: 480ms; }
+.blur-in-d5  { animation-delay: 570ms; }
+.blur-in-d6  { animation-delay: 650ms; }
+.blur-in-d7  { animation-delay: 720ms; }
+.blur-in-d8  { animation-delay: 790ms; }
+.blur-in-d9  { animation-delay: 850ms; }
+.blur-in-d10 { animation-delay: 910ms; }
+.blur-in-d11 { animation-delay: 960ms; }
