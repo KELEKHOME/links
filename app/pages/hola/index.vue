@@ -2,9 +2,10 @@
 <script setup lang="ts">
 definePageMeta({ pageTransition: { name: 'fade', mode: 'out-in' } })
 
-const links = useLinks()
-const catalogLink = computed(() => links.find(l => l.title === 'Catálogo Kelek Home'))
-const otherContent = computed(() => links.filter(l => l.category === 'content' && l.title !== 'Catálogo Kelek Home'))
+const { links } = useLinks()
+const activeLinks = computed(() => links.value.filter(l => l.enabled !== false))
+const catalogLink = computed(() => activeLinks.value.find(l => l.title === 'Catálogo Kelek Home'))
+const otherContent = computed(() => activeLinks.value.filter(l => l.category === 'content' && l.title !== 'Catálogo Kelek Home'))
 
 useSeoMeta({
   title: 'Kelek Home — Links',

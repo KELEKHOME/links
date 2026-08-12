@@ -1,7 +1,10 @@
 export interface Link {
+  id?: string
   title: string
   url: string
   icon: string
-  color: string
-  category: 'social' | 'content'
+  color?: string
+  category: string
+  highlighted?: boolean
+  enabled?: boolean
 }
