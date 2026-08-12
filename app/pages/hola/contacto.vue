@@ -69,26 +69,50 @@ async function handleSubmit() {
     assertive('Error al enviar el mensaje. Por favor, inténtalo de nuevo.')
   }
 }
+
+// FAQ Accordion
+const openFaq = ref<number | null>(null)
+const faqs = [
+  {
+    q: '¿Cómo funciona el proceso de encargo a medida?',
+    a: 'Empezamos comentando tu idea, dimensiones y tipo de madera. Te envío un presupuesto detallado sin compromiso y, una vez aprobado, acordamos los detalles antes de comenzar en el taller.'
+  },
+  {
+    q: '¿Qué maderas utilizas y de dónde proceden?',
+    a: 'Trabajo principalmente con maderas macizas de fuentes sostenibles certificadas (FSC/PEFC): Roble salvaje, Castaño, Nogal, Olivo y Fresno.'
+  },
+  {
+    q: '¿Cuánto tiempo tarda la fabricación?',
+    a: 'El plazo habitual de fabricación artesanal es de 3 a 5 semanas, según la complejidad del proyecto y los acabados.'
+  },
+  {
+    q: '¿Realizas envíos fuera de Madrid?',
+    a: 'Sí, realizo envíos protegidos a toda España. En la Comunidad de Madrid realizamos la entrega y montaje directamente en persona.'
+  },
+  {
+    q: '¿Qué mantenimiento requiere la madera maciza?',
+    a: 'Aplicamos aceites y ceras naturales de gran resistencia. Con tu pedido adjuntamos una guía rápida y recomendaciones sencillas de cuidado diario.'
+  }
+]
 </script>
 
 <template>
-  <div class="min-h-screen pt-20 pb-16 px-4 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100">
-    <div class="w-full max-w-xl mx-auto space-y-6">
+  <div class="min-h-screen pt-28 sm:pt-32 pb-16 px-4 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100">
+    <div class="w-full max-w-xl mx-auto space-y-8">
       
-      <!-- Header Card -->
-      <div class="p-6 sm:p-7 rounded-[28px] border border-stone-200/90 dark:border-stone-800 bg-white dark:bg-stone-900/90 shadow-2xs space-y-3 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-semibold">
-          <Icon name="mdi:hammer-wrench" class="text-amber-500" />
-          <span>Atención Personalizada</span>
+      <!-- Header Hero Section (Estilo Referencia) -->
+      <div class="text-center space-y-4 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 text-xs font-semibold tracking-wide">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span>Taller Artesanal & Atención Personalizada</span>
         </div>
 
-        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-stone-900 dark:text-white leading-tight">
-          <span>Diseñemos tu pieza </span>
-          <span class="font-serif italic text-amber-600 dark:text-amber-400 font-normal">a medida</span>
+        <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-stone-50 leading-tight">
+          Creemos algo único juntos
         </h1>
 
-        <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed max-w-lg">
-          Trabajo cada mueble una a una en madera maciza. Escríbeme directamente por WhatsApp o déjame los detalles de tu idea a continuación.
+        <p class="text-sm sm:text-base text-stone-600 dark:text-stone-300 font-normal max-w-xl mx-auto leading-relaxed">
+          Cuéntanos tu proyecto a medida, solicita información o pásate por nuestro taller en Madrid. Respondemos habitualmente en menos de 24 horas.
         </p>
       </div>
 
@@ -339,6 +363,52 @@ async function handleSubmit() {
 
         </form>
 
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="p-6 sm:p-7 rounded-[28px] border border-stone-200/90 dark:border-stone-800 bg-white dark:bg-stone-900/90 shadow-2xs space-y-4">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 text-[11px] font-bold">
+            <Icon name="mdi:help-circle-outline" class="text-xs" />
+            <span>Dudas Frecuentes</span>
+          </div>
+          <h2 class="text-lg font-bold text-stone-900 dark:text-stone-100">
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-xs text-stone-500 dark:text-stone-400">
+            Información rápida sobre encargos a medida, plazos y envíos
+          </p>
+        </div>
+
+        <div class="space-y-2 pt-1">
+          <div
+            v-for="(faq, index) in faqs"
+            :key="index"
+            class="rounded-xl border border-stone-200/80 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/40 overflow-hidden transition-all"
+          >
+            <button
+              type="button"
+              @click="openFaq = openFaq === index ? null : index"
+              class="w-full px-4 py-3 text-left flex items-center justify-between gap-3 cursor-pointer hover:bg-stone-100/60 dark:hover:bg-stone-800/50 transition-colors"
+            >
+              <span class="font-semibold text-stone-900 dark:text-stone-100 text-xs sm:text-sm leading-snug">
+                {{ faq.q }}
+              </span>
+              <Icon
+                name="mdi:chevron-down"
+                :class="{ 'rotate-180': openFaq === index }"
+                class="text-lg text-amber-500 shrink-0 transition-transform duration-200"
+              />
+            </button>
+
+            <div
+              v-if="openFaq === index"
+              class="px-4 pb-3.5 text-xs text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-100 dark:border-stone-800/80 pt-2.5 animate-fade-in"
+            >
+              {{ faq.a }}
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

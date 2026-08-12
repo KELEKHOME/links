@@ -5,6 +5,7 @@
            dark:from-zinc-900 dark:via-black dark:to-zinc-800 dark:text-white"
   >
     <NuxtRouteAnnouncer />
+    <AppHeader />
     <main class="flex-1">
       <NuxtPage />
     </main>
