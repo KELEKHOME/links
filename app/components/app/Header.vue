@@ -24,7 +24,7 @@
         class="flex items-center overflow-hidden transition-all duration-500 ease-in-out shrink-0"
         :class="scrolled ? 'max-w-[32px] opacity-100' : 'max-w-0 opacity-0'"
       >
-        <img src="/favicon.png" alt="Kelek Home" class="w-6 h-6 rounded-lg shrink-0" />
+        <img src="/apple-touch-icon.png" alt="Kelek Home" class="w-6 h-6 rounded-full object-cover shrink-0 ring-1 ring-amber-400/40 shadow-xs" />
       </div>
       <!-- Nav links -->
       <div class="flex items-center">
@@ -86,7 +86,7 @@
       >
         <!-- Brand -->
         <div class="flex items-center gap-2">
-          <img src="/favicon.png" alt="Kelek Home" class="w-6 h-6 rounded-lg shrink-0" />
+          <img src="/apple-touch-icon.png" alt="Kelek Home" class="w-6 h-6 rounded-full object-cover shrink-0 ring-1 ring-amber-400/40 shadow-xs" />
           <Transition
             enter-active-class="transition duration-200 ease-out"
             enter-from-class="opacity-0 -translate-x-2"

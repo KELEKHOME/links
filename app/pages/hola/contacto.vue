@@ -3,11 +3,22 @@
 definePageMeta({ pageTransition: { name: 'slide-up', mode: 'out-in' } })
 useSeoMeta({ title: 'Contacto & Presupuestos — Kelek Home' })
 
+const route = useRoute()
 const { status, submit, reset } = useFormspree()
 const { polite, assertive } = useAnnouncer()
 
-type ContactType = 'estimate' | 'general'
+type ContactType = 'estimate' | 'general' | 'collaboration'
 const activeType = ref<ContactType>('estimate')
+
+onMounted(() => {
+  if (route.query.tipo === 'colaboracion' || route.query.type === 'collaboration') {
+    activeType.value = 'collaboration'
+  }
+})
+
+watch(() => route.query.tipo, (val) => {
+  if (val === 'colaboracion') activeType.value = 'collaboration'
+})
 
 const selectedMueble = ref('Mesa de Comedor')
 const muebleOptions = [
@@ -27,9 +38,18 @@ const maderaOptions = [
   { id: 'Asesórame', label: 'Asesórame' }
 ]
 
+const selectedColabType = ref('Cesión de Herramientas / Material')
+const colabOptions = [
+  'Cesión de Herramientas / Material',
+  'Patrocinio de Contenido',
+  'Pruebas de Taller & Feedback',
+  'Otro'
+]
+
 const form = reactive({
   nombre: '',
   email: '',
+  marca: '',
   medidas: '',
   descripcion: ''
 })
@@ -56,6 +76,10 @@ async function handleSubmit() {
     payload.madera = selectedMadera.value
     payload.medidas = form.medidas
     payload._subject = `Presupuesto a Medida: ${selectedMueble.value} (${selectedMadera.value}) - ${form.nombre}`
+  } else if (activeType.value === 'collaboration') {
+    payload.marca = form.marca
+    payload.tipoColaboracion = selectedColabType.value
+    payload._subject = `Propuesta de Colaboración de Marca: ${form.marca || form.nombre}`
   } else {
     payload._subject = `Consulta General de ${form.nombre}`
   }
@@ -63,7 +87,7 @@ async function handleSubmit() {
   await submit(payload)
 
   if (status.value === 'success') {
-    Object.assign(form, { nombre: '', email: '', medidas: '', descripcion: '' })
+    Object.assign(form, { nombre: '', email: '', marca: '', medidas: '', descripcion: '' })
     polite('¡Mensaje enviado con éxito! Te responderé lo antes posible.')
   } else if (status.value === 'error') {
     assertive('Error al enviar el mensaje. Por favor, inténtalo de nuevo.')
@@ -161,9 +185,7 @@ const faqs = [
           rel="noopener noreferrer"
           class="p-3.5 rounded-2xl bg-stone-100 hover:bg-stone-200/80 dark:bg-stone-800/80 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700/80 transition-all duration-200 flex items-center gap-3 group"
         >
-          <div class="w-9 h-9 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-            <Icon name="simple-icons:instagram" class="text-lg" />
-          </div>
+          <UiInstagramIcon class="w-9 h-9 shrink-0 group-hover:scale-105 transition-transform" />
           <div class="min-w-0 flex-1">
             <div class="text-xs font-bold truncate">Instagram</div>
             <div class="text-[10px] text-stone-500 dark:text-stone-400 truncate">@kelek.home</div>
@@ -204,6 +226,18 @@ const faqs = [
               ]"
             >
               Consulta
+            </button>
+            <button
+              type="button"
+              @click="activeType = 'collaboration'"
+              :class="[
+                'px-3 py-1 rounded-full text-xs font-medium transition-all cursor-pointer flex items-center gap-1',
+                activeType === 'collaboration'
+                  ? 'bg-amber-500 text-stone-950 font-bold shadow-2xs'
+                  : 'text-stone-500 dark:text-stone-400 hover:text-stone-900'
+              ]"
+            >
+              <span>Marcas</span>
             </button>
           </div>
         </div>
@@ -297,6 +331,44 @@ const faqs = [
             </div>
           </div>
 
+          <!-- Collaboration Specific Options -->
+          <div v-if="activeType === 'collaboration'" class="space-y-3 p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+            <div class="space-y-1">
+              <label class="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                Nombre de la Marca / Empresa *
+              </label>
+              <input
+                v-model="form.marca"
+                type="text"
+                :required="activeType === 'collaboration'"
+                placeholder="Ej. Bosch Professional, Festool, V33..."
+                class="w-full px-3.5 py-2.5 rounded-xl border border-amber-500/30 bg-white dark:bg-stone-900 text-xs text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-amber-500 transition-colors"
+              />
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                Tipo de Sinergia
+              </label>
+              <div class="flex flex-wrap gap-1.5">
+                <button
+                  v-for="colab in colabOptions"
+                  :key="colab"
+                  type="button"
+                  @click="selectedColabType = colab"
+                  :class="[
+                    'px-2.5 py-1 rounded-lg text-xs transition-all cursor-pointer',
+                    selectedColabType === colab
+                      ? 'bg-amber-500 text-stone-950 font-bold'
+                      : 'bg-white/80 dark:bg-stone-800/80 text-stone-700 dark:text-stone-300 hover:bg-white'
+                  ]"
+                >
+                  {{ colab }}
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- Common Personal Fields -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div class="space-y-1">
@@ -356,7 +428,7 @@ const faqs = [
               <span>Enviando...</span>
             </span>
             <span v-else class="flex items-center gap-1.5">
-              <span>{{ activeType === 'estimate' ? 'Solicitar Presupuesto' : 'Enviar Mensaje' }}</span>
+              <span>{{ activeType === 'estimate' ? 'Solicitar Presupuesto' : activeType === 'collaboration' ? 'Enviar Propuesta de Colaboración' : 'Enviar Mensaje' }}</span>
               <Icon name="mdi:arrow-right" class="text-sm" />
             </span>
           </button>
