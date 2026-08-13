@@ -4,6 +4,7 @@
       
       <!-- Newsletter Card ("EL CUADERNO DEL TALLER") -->
       <div
+        v-if="showNewsletter"
         v-motion
         :initial="{ opacity: 0, y: 20 }"
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 400 } }"
@@ -99,6 +100,15 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const showNewsletter = computed(() => {
+  const p = route.path.toLowerCase()
+  if (p.includes('marcas') || p.includes('contacto')) {
+    return false
+  }
+  return true
+})
+
 const year = new Date().getFullYear()
 const email = ref('')
 const { status, submit } = useFormspree()
