@@ -2,8 +2,9 @@
   <img
     src="/images/instagram.png"
     alt="Instagram"
-    class="shrink-0 object-contain rounded-lg"
+    class="shrink-0 object-contain"
     :class="props.class || 'w-5 h-5'"
+    loading="lazy"
   />
 </template>
 

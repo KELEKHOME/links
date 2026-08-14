@@ -41,16 +41,16 @@ const socials = computed(() => [
     key: 'instagram',
     title: 'Instagram',
     url: 'https://www.instagram.com/kelek.home',
-    icon: isDark.value ? 'simple-icons:instagram' : 'logos:instagram-icon',
-    iconClass: isDark.value ? 'text-white' : '',
+    icon: 'simple-icons:instagram',
+    iconClass: 'text-stone-900 dark:text-white',
     followers: 5000
   },
   {
     key: 'tiktok',
     title: 'TikTok',
     url: 'https://www.tiktok.com/@kelek.home',
-    icon: isDark.value ? 'simple-icons:tiktok' : 'logos:tiktok-icon',
-    iconClass: isDark.value ? 'text-white' : '',
+    icon: 'simple-icons:tiktok',
+    iconClass: 'text-stone-900 dark:text-white',
     followers: 6500
   }
 ])
