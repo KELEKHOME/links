@@ -34,19 +34,19 @@ useSeoMeta({
       <SectionsWhatsAppCTA />
 
       <!-- Separador Links -->
-      <div class="blur-in blur-in-d8 mt-6 flex items-center gap-4 max-w-lg mx-auto">
+      <div class="blur-in blur-in-d8 mt-6 flex items-center gap-4 w-full">
         <div class="flex-1 h-px bg-black/10 dark:bg-white/10" />
         <span class="text-xs font-semibold uppercase tracking-widest opacity-40">{{ $t('index.links_title') }}</span>
         <div class="flex-1 h-px bg-black/10 dark:bg-white/10" />
       </div>
 
       <!-- Hero Catálogo -->
-      <div v-if="catalogLink" class="blur-in blur-in-d9 mt-4 max-w-lg mx-auto">
+      <div v-if="catalogLink" class="blur-in blur-in-d9 mt-4 w-full">
         <UiHeroCatalogCard :url="catalogLink.url" />
       </div>
 
       <!-- Resto de links de contenido -->
-      <div class="mt-3 space-y-3 max-w-lg mx-auto">
+      <div class="mt-3 space-y-3 w-full">
         <div
           v-for="(link, i) in otherContent"
           :key="link.url"

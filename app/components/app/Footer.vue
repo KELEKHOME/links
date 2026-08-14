@@ -9,9 +9,8 @@
         :initial="{ opacity: 0, y: 20 }"
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 400 } }"
         class="p-8 sm:p-10 rounded-[32px] border transition-all duration-300 relative overflow-hidden
-               bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40
-               dark:from-stone-900/90 dark:via-stone-900 dark:to-stone-950
-               border-stone-200/90 dark:border-stone-800 shadow-sm"
+               bg-white dark:bg-stone-900
+               border-stone-200/90 dark:border-stone-800 shadow-xs"
       >
         <!-- Background subtle glow -->
         <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />

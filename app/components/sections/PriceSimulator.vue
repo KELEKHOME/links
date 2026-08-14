@@ -1,6 +1,6 @@
 <!-- app/components/sections/PriceSimulator.vue -->
 <template>
-  <section class="w-full max-w-xl mx-auto mt-8">
+  <section class="w-full max-w-2xl mx-auto mt-8">
     <!-- Trigger Card on main page (Image 1) -->
     <div
       v-motion

@@ -122,16 +122,11 @@ const faqs = [
 
 <template>
   <div class="min-h-screen pt-28 sm:pt-32 pb-16 px-4 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100">
-    <div class="w-full max-w-xl mx-auto space-y-8">
+    <div class="w-full max-w-2xl mx-auto space-y-8">
       
       <!-- Header Hero Section (Estilo Referencia) -->
       <div class="text-center space-y-4 max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20 text-xs font-semibold tracking-wide">
-          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-          <span>Taller Artesanal & Atención Personalizada</span>
-        </div>
-
-        <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-stone-50 leading-tight">
+        <h1 class="text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
           Creemos algo único juntos
         </h1>
 

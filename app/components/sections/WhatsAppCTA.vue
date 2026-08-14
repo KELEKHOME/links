@@ -1,6 +1,6 @@
 <!-- app/components/sections/WhatsAppCTA.vue -->
 <template>
-  <section class="w-full max-w-xl mx-auto mt-10">
+  <section class="w-full max-w-2xl mx-auto mt-10">
     <a
       :href="whatsappUrl"
       target="_blank"

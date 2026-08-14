@@ -1,6 +1,6 @@
 <!-- app/components/sections/CategoryExplorer.vue -->
 <template>
-  <section class="w-full max-w-xl mx-auto">
+  <section class="w-full max-w-2xl mx-auto">
     <div
       v-motion
       :initial="{ opacity: 0, y: 20 }"

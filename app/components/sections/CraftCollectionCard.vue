@@ -1,6 +1,6 @@
 <!-- app/components/sections/CraftCollectionCard.vue -->
 <template>
-  <section class="w-full max-w-xl mx-auto">
+  <section class="w-full max-w-2xl mx-auto">
     <a
       :href="catalogUrl"
       target="_blank"
