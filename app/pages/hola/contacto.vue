@@ -1,7 +1,7 @@
 <!-- app/pages/hola/contacto.vue -->
 <script setup lang="ts">
 definePageMeta({ pageTransition: { name: 'slide-up', mode: 'out-in' } })
-useSeoMeta({ title: 'Contacto & Presupuestos — Kelek Home' })
+useSeoMeta({ title: 'KELEK HOME - Contacto' })
 
 const route = useRoute()
 const { status, submit, reset } = useFormspree()

@@ -69,7 +69,7 @@ const formatDate = (isoStr: string) => {
 }
 
 useSeoMeta({
-  title: 'Panel de Administración — Kelek Home',
+  title: 'KELEK HOME - Panel de administración',
   description: 'Gestión interna de suscriptores y solicitudes de presupuesto.'
 })
 </script>

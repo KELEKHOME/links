@@ -2,7 +2,7 @@
 <script setup lang="ts">
 definePageMeta({ pageTransition: { name: 'slide-right', mode: 'out-in' } })
 useSeoMeta({
-  title: 'Proyectos & Piezas de Autor — Kelek Home',
+  title: 'KELEK HOME - Proyectos',
   description: 'Portafolio de piezas únicas en madera maciza elaboradas en taller artesanal. Conoce las maderas nobles, acabados y detalles de cada encargo.'
 })
 

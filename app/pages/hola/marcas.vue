@@ -2,7 +2,7 @@
 <script setup lang="ts">
 definePageMeta({ pageTransition: { name: 'slide-up', mode: 'out-in' } })
 useSeoMeta({
-  title: 'Marcas Aliadas & Equipamiento — Kelek Home',
+  title: 'KELEK HOME - Colaboraciones',
   description: 'Descubre las marcas de primer nivel que potencian el taller de ebanistería Kelek Home en Madrid: Bambu Lab, Bessey, Bosch, Stabila, Klingspor, V33, Festool, Rubio Monocoat y oportunidades de sinergia.'
 })
 

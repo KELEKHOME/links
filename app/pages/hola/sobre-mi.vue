@@ -2,7 +2,7 @@
 <script setup lang="ts">
 definePageMeta({ pageTransition: { name: 'fade', mode: 'out-in' } })
 const { t } = useI18n()
-useSeoMeta({ title: 'Sobre mí — Kelek Home' })
+useSeoMeta({ title: 'KELEK HOME - Sobre mí' })
 
 const route = useRoute()
 const router = useRouter()
