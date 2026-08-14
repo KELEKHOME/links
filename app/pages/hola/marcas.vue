@@ -468,11 +468,11 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
 </script>
 
 <template>
-  <div class="min-h-screen pt-28 sm:pt-32 pb-24 px-4 sm:px-6 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-amber-500/20 font-sans antialiased">
-    <div class="w-full max-w-6xl mx-auto space-y-8 sm:space-y-10">
+  <div class="min-h-screen pt-28 sm:pt-32 pb-24 px-4 bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 selection:bg-amber-500/20 font-sans antialiased">
+    <div class="w-full max-w-2xl mx-auto space-y-8 sm:space-y-10">
 
       <!-- Hero Header Section -->
-      <div class="text-center space-y-6 max-w-3xl mx-auto pt-2">
+      <div class="text-center space-y-5 max-w-2xl mx-auto pt-2">
         <!-- Availability Badge -->
         <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-500/25 text-xs font-semibold tracking-wide shadow-2xs backdrop-blur-xs">
           <span class="relative flex h-2 w-2">
@@ -483,21 +483,21 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
         </div>
 
         <div class="space-y-4">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-stone-900 dark:text-stone-50 leading-[1.15]">
+          <h1 class="text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
             Marcas que Potencian Nuestro Taller
           </h1>
 
-          <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base font-normal leading-relaxed max-w-2xl mx-auto">
+          <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm font-normal leading-relaxed max-w-xl mx-auto">
             En Kelek Home damos visibilidad auténtica a las mejores marcas de herramientas, maquinaria y acabados. Integración real en piezas a medida y difusión en contenido de ebanistería.
           </p>
 
           <!-- Counter Metric: Brands that trust Kelek -->
-          <div class="pt-3 flex items-center justify-center">
-            <div class="inline-flex items-center gap-4 px-6 py-3.5 rounded-2xl bg-amber-500/10 dark:bg-amber-500/10 border border-amber-500/20 text-stone-900 dark:text-stone-100 shadow-2xs">
+          <div class="pt-2 flex items-center justify-center">
+            <div class="inline-flex items-center gap-4 px-5 py-3 rounded-2xl bg-amber-500/10 dark:bg-amber-500/10 border border-amber-500/20 text-stone-900 dark:text-stone-100 shadow-2xs">
               <div class="flex items-baseline gap-1.5 text-amber-600 dark:text-amber-400">
-                <span class="text-3xl sm:text-4xl font-serif font-extrabold tracking-tight">+50</span>
+                <span class="text-2xl sm:text-3xl font-serif font-extrabold tracking-tight">+50</span>
               </div>
-              <div class="text-left border-l border-amber-500/20 pl-4 space-y-0.5">
+              <div class="text-left border-l border-amber-500/20 pl-3.5 space-y-0.5">
                 <span class="block text-xs font-bold uppercase tracking-wider text-stone-900 dark:text-stone-100">
                   Marcas que confían en KELEK
                 </span>
@@ -511,15 +511,8 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
       </div>
 
       <!-- MARCAS ALIADAS & EQUIPAMIENTO SECTION -->
-      <div class="relative space-y-8 py-2 overflow-hidden">
+      <div class="relative space-y-6 py-2 overflow-hidden">
         
-        <!-- Subtle Background Architectural Typography Watermark -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.04]">
-          <span class="text-[120px] sm:text-[180px] font-serif font-black tracking-tighter uppercase text-stone-900 dark:text-white whitespace-nowrap">
-            MARCAS
-          </span>
-        </div>
-
         <!-- Category Filter Pills -->
         <div class="relative z-10 flex items-center justify-center gap-2 flex-wrap pt-1">
           <button
@@ -528,7 +521,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
             type="button"
             @click="activeFilter = filter.id"
             :class="[
-              'px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border',
+              'px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer border',
               activeFilter === filter.id
                 ? 'bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 border-stone-900 dark:border-stone-100 shadow-sm scale-102'
                 : 'bg-white dark:bg-stone-900 text-stone-600 dark:text-stone-400 border-stone-200/90 dark:border-stone-800 hover:border-amber-500/50'
@@ -538,8 +531,8 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
           </button>
         </div>
 
-        <!-- Unified Fine Grid -->
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+        <!-- Unified Grid (2 cols on sm, 1 col on mobile) -->
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
           
           <!-- Skeleton Loading State -->
           <template v-if="isBrandsLoading">
@@ -666,7 +659,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
           </template>
 
           <!-- Minimalist Logo Carousel (Fused with app background, no container, no subtext) -->
-          <div class="col-span-1 md:col-span-2 lg:col-span-3 py-6 relative w-full overflow-hidden mask-fade-edges">
+          <div class="col-span-1 sm:col-span-2 py-6 relative w-full overflow-hidden mask-fade-edges">
             <div class="flex items-center gap-12 sm:gap-16 w-max animate-marquee-loop hover:[animation-play-state:paused]">
               <!-- First Loop -->
               <div
@@ -712,12 +705,12 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
             </div>
           </div>
 
-          <!-- Featured Callout Card (Full Width - 3 Columns) -->
-          <div class="col-span-1 md:col-span-2 lg:col-span-3 p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-stone-900 via-stone-950 to-black border border-stone-800 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden group">
+          <!-- Featured Callout Card (Full Width in Bio view) -->
+          <div class="col-span-1 sm:col-span-2 p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-stone-900 via-stone-950 to-black border border-stone-800 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
             <!-- Ambient Backlight -->
             <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-500"></div>
 
-            <div class="space-y-3 z-10 max-w-2xl">
+            <div class="space-y-3 z-10 max-w-md">
               <span class="px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-300 text-[10px] font-bold uppercase tracking-wider inline-block backdrop-blur-md border border-amber-500/30">
                 🤝 SINERGIA & PARTNERSHIP
               </span>
@@ -726,12 +719,12 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                 ¡Impulsamos el valor de tus productos!
               </h3>
 
-              <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-normal">
+              <p class="text-xs text-stone-300 leading-relaxed font-normal">
                 Si eres una marca o un fabricante y quieres crear sinergias, podemos probar tus producto en proyectos reales y mostrarlos a nuestra comunidad.
               </p>
             </div>
 
-            <div class="space-y-2.5 z-10 w-full md:w-auto shrink-0 md:min-w-[260px] pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-stone-800 md:pl-7 flex flex-col justify-center">
+            <div class="space-y-2.5 z-10 w-full sm:w-auto shrink-0 sm:min-w-[220px] pt-4 sm:pt-0 border-t sm:border-t-0 sm:border-l border-stone-800 sm:pl-6 flex flex-col justify-center">
               <div class="flex items-center justify-between gap-4 text-xs text-stone-300 pb-1">
                 <span class="font-medium">Valoración Taller Real:</span>
                 <div class="flex items-center gap-1 text-amber-400 text-sm">
@@ -742,7 +735,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
 
               <NuxtLink
                 to="/hola/contacto?tipo=colaboracion"
-                class="w-full py-3.5 px-5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-all shadow-md flex items-center justify-center gap-2 group/btn cursor-pointer whitespace-nowrap"
+                class="w-full py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs transition-all shadow-md flex items-center justify-center gap-2 group/btn cursor-pointer whitespace-nowrap"
               >
                 <span>PROPONER COLABORACIÓN</span>
                 <Icon name="mdi:arrow-right" class="text-sm group-hover/btn:translate-x-1 transition-transform text-stone-950" />
@@ -752,9 +745,9 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                 href="https://www.instagram.com/kelek.home"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full py-3 px-5 rounded-xl bg-stone-900/90 hover:bg-stone-800 text-white font-bold text-xs transition-all border border-stone-700/80 flex items-center justify-center gap-2 group/btn cursor-pointer whitespace-nowrap shadow-xs"
+                class="w-full py-2.5 px-4 rounded-xl bg-stone-900/90 hover:bg-stone-800 text-white font-bold text-xs transition-all border border-stone-700/80 flex items-center justify-center gap-2 group/btn cursor-pointer whitespace-nowrap shadow-xs"
               >
-                <UiInstagramIcon class="w-5 h-5 shrink-0" />
+                <UiInstagramIcon class="w-4 h-4 shrink-0" />
                 <span>Hablar por Instagram</span>
               </a>
             </div>
@@ -1027,7 +1020,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
           class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-stone-950/80 backdrop-blur-md overflow-y-auto"
           @click.self="showMapModal = false"
         >
-          <div class="relative w-full max-w-4xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-[32px] shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6 my-auto max-h-[92vh] flex flex-col">
+          <div class="relative w-full max-w-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-[28px] shadow-2xl overflow-hidden p-6 sm:p-8 space-y-6 my-auto max-h-[92vh] flex flex-col">
             
             <!-- Modal Header -->
             <div class="flex items-start justify-between gap-4 border-b border-stone-100 dark:border-stone-800 pb-4 shrink-0">
@@ -1170,72 +1163,72 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
       </Teleport>
 
       <!-- Value Proposition Pillars for Brands -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="p-7 rounded-[28px] bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-3.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
-          <div class="w-11 h-11 rounded-2xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-xl font-bold border border-amber-500/20">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-2.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-lg font-bold border border-amber-500/20">
             <Icon name="mdi:hammer-wrench" />
           </div>
-          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base">Presencia Real en Taller</h3>
+          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm">Presencia Real en Taller</h3>
           <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-            Integración de tu maquinaria o consumibles durante el proceso artesanal diario de ebanistería a medida.
+            Integración de tu maquinaria o consumibles durante el proceso artesanal diario.
           </p>
         </div>
 
-        <div class="p-7 rounded-[28px] bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-3.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
-          <div class="w-11 h-11 rounded-2xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-xl font-bold border border-amber-500/20">
+        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-2.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-lg font-bold border border-amber-500/20">
             <Icon name="mdi:video-vintage" />
           </div>
-          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base">Contenido Estético de Proceso</h3>
+          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm">Contenido de Proceso</h3>
           <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-            Generamos imágenes y vídeos donde la estética del acabado y el rendimiento del producto destacan naturalmente.
+            Generamos imágenes y vídeos donde la estética del acabado y el producto destacan.
           </p>
         </div>
 
-        <div class="p-7 rounded-[28px] bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-3.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
-          <div class="w-11 h-11 rounded-2xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-xl font-bold border border-amber-500/20">
+        <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 space-y-2.5 shadow-2xs hover:border-amber-500/40 transition-all hover:-translate-y-0.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-lg font-bold border border-amber-500/20">
             <Icon name="mdi:sparkles" />
           </div>
-          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-sm sm:text-base">Prescripción Directa al Cliente</h3>
+          <h3 class="font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm">Prescripción Directa</h3>
           <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-            Recomendación explícita de tus productos en la guía de mantenimiento entregada a cada comprador de Kelek Home.
+            Recomendación de tus productos en la guía entregada a cada comprador de Kelek Home.
           </p>
         </div>
       </div>
 
       <!-- Formatos de Sinergia Section -->
-      <div class="space-y-6">
-        <div class="text-center space-y-2 max-w-xl mx-auto">
+      <div class="space-y-5">
+        <div class="text-center space-y-1.5 max-w-xl mx-auto">
           <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Modalidades de Trabajo</span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
             ¿Cómo Podemos Colaborar?
           </h2>
-          <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400">
-            Ofrecemos distintas fórmulas de sinergia adaptadas a las metas de comunicación de cada marca.
+          <p class="text-xs text-stone-500 dark:text-stone-400">
+            Fórmulas de sinergia adaptadas a las metas de comunicación de cada marca.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <div
             v-for="format in synergyFormats"
             :key="format.id"
             @click="activeSynergyTab = format.id"
             :class="[
-              'p-6 rounded-[28px] border transition-all cursor-pointer flex flex-col justify-between space-y-4 hover:-translate-y-0.5',
+              'p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-3.5 hover:-translate-y-0.5',
               activeSynergyTab === format.id
                 ? 'bg-white dark:bg-stone-900 border-amber-500 shadow-md ring-2 ring-amber-500/20'
                 : 'bg-white/80 dark:bg-stone-900/60 border-stone-200/80 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700'
             ]"
           >
-            <div class="space-y-2.5">
-              <div class="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-lg font-bold border border-amber-500/20">
+            <div class="space-y-2">
+              <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center text-base font-bold border border-amber-500/20">
                 <Icon :name="format.icon" />
               </div>
-              <h3 class="font-bold text-stone-900 dark:text-stone-100 text-sm leading-snug">{{ format.title }}</h3>
+              <h3 class="font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm leading-snug">{{ format.title }}</h3>
               <p class="text-[11px] text-amber-800 dark:text-amber-400 font-semibold">{{ format.tagline }}</p>
               <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">{{ format.description }}</p>
             </div>
 
-            <div class="pt-3 border-t border-stone-100 dark:border-stone-800 space-y-2">
+            <div class="pt-2.5 border-t border-stone-100 dark:border-stone-800 space-y-1.5">
               <p class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Entregables:</p>
               <ul class="space-y-1">
                 <li v-for="(item, idx) in format.deliverables" :key="idx" class="text-[11px] text-stone-600 dark:text-stone-300 flex items-center gap-1.5">
@@ -1249,21 +1242,21 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
       </div>
 
       <!-- FAQ Accordion for Brands -->
-      <div class="py-6 space-y-10">
+      <div class="py-4 space-y-6">
         <!-- Section Header -->
-        <div class="text-center space-y-3 max-w-2xl mx-auto">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 dark:bg-amber-500/15 text-amber-900 dark:text-amber-300 border border-amber-500/25 text-xs font-bold uppercase tracking-wider">
-            <Icon name="mdi:help-circle-outline" class="text-sm text-amber-600 dark:text-amber-400" />
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 dark:bg-amber-500/15 text-amber-900 dark:text-amber-300 border border-amber-500/25 text-[11px] font-bold uppercase tracking-wider">
+            <Icon name="mdi:help-circle-outline" class="text-xs text-amber-600 dark:text-amber-400" />
             <span>¿Cómo Podemos Ayudarte?</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
-            Preguntas Frecuentes de Fabricantes & Marcas
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
+            Preguntas Frecuentes de Marcas
           </h2>
         </div>
 
-        <!-- 2-Column Minimalist Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 pt-2">
+        <!-- 1-Column Bio Grid -->
+        <div class="space-y-4 pt-1">
           <div
             v-for="(faq, index) in faqs"
             :key="index"
