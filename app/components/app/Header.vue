@@ -209,10 +209,11 @@ onMounted(() => {
   onUnmounted(() => window.removeEventListener('scroll', handler))
 })
 
+// Orden fijo: Inicio -> Proyectos -> Sobre Mí -> Marcas -> Contacto
 const navItems = computed(() => [
   { label: t('nav.home'),     to: '/hola',           icon: 'mdi:home-outline' },
-  { label: t('nav.about'),    to: '/hola/sobre-mi',  icon: 'mdi:account-outline' },
   { label: t('nav.projects'), to: '/hola/proyectos', icon: 'mdi:hammer-wrench' },
+  { label: t('nav.about'),    to: '/hola/sobre-mi',  icon: 'mdi:account-outline' },
   { label: t('nav.brands'),   to: '/hola/marcas',    icon: 'mdi:tag-outline' },
   { label: t('nav.contact'),  to: '/hola/contacto',  icon: 'mdi:email-outline' }
 ])

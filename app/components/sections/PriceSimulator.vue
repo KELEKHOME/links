@@ -194,9 +194,22 @@
 
           <!-- STEP 3: MEDIDAS APROXIMADAS Y CONTACTO (Image 3) -->
           <div v-else-if="step === 3 && !submitted" class="space-y-4 pt-1">
-            <p class="text-xs font-bold tracking-wider uppercase text-stone-500 dark:text-stone-400">
-              PASO 3: MEDIDAS APROXIMADAS Y CONTACTO
-            </p>
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-bold tracking-wider uppercase text-stone-500 dark:text-stone-400">
+                PASO 3: MEDIDAS Y ENVÍO
+              </p>
+              
+              <!-- Mode switcher badge -->
+              <button
+                type="button"
+                @click="toggleFeature('simulatorDirectWhatsApp')"
+                class="inline-flex items-center gap-1 text-[11px] font-medium text-stone-500 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400 transition-colors cursor-pointer"
+                title="Cambiar método de envío"
+              >
+                <Icon :name="features.simulatorDirectWhatsApp ? 'simple-icons:whatsapp' : 'mdi:email-outline'" class="text-xs" />
+                <span>{{ features.simulatorDirectWhatsApp ? 'Modo WhatsApp activo' : 'Modo Formulario activo' }}</span>
+              </button>
+            </div>
 
             <!-- Price estimate pill badge -->
             <div class="p-3.5 rounded-2xl bg-[#FFFBF5] dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/60 flex items-center justify-between text-xs sm:text-sm">
@@ -208,25 +221,66 @@
               </span>
             </div>
 
-            <!-- Form Fields -->
-            <div class="space-y-3.5">
-              <!-- Field 1: Medidas -->
-              <div class="space-y-1">
-                <label class="text-xs font-bold text-stone-700 dark:text-stone-300">
-                  Medidas estimadas (Largo x Ancho x Alto cm)
-                </label>
-                <input
-                  v-model="form.medidas"
-                  type="text"
-                  placeholder="Ej: 160 x 80 x 75 cm"
-                  class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors"
-                />
-              </div>
+            <!-- Field 1: Medidas -->
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-stone-700 dark:text-stone-300">
+                Medidas estimadas (Largo x Ancho x Alto cm)
+              </label>
+              <input
+                v-model="form.medidas"
+                type="text"
+                placeholder="Ej: 180 x 90 x 75 cm o 'Para 6 personas'"
+                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors"
+              />
+            </div>
 
-              <!-- Field 2: Email o Teléfono / WhatsApp -->
+            <!-- Field 2: Detalles adicionales -->
+            <div class="space-y-1">
+              <label class="text-xs font-bold text-stone-700 dark:text-stone-300">
+                Detalles del proyecto (Opcional)
+              </label>
+              <textarea
+                v-model="form.notas"
+                rows="2"
+                placeholder="Ej: Borde biselado, acabado mate, espacio disponible..."
+                class="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors resize-none"
+              />
+            </div>
+
+            <!-- Direct WhatsApp CTA Mode (Fast Lead Generation) -->
+            <div v-if="features.simulatorDirectWhatsApp" class="space-y-3 pt-1">
+              <a
+                :href="whatsappDirectUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                @click="recordSimulatorLead('whatsapp')"
+                class="w-full py-3.5 px-6 rounded-2xl font-bold text-sm text-white bg-emerald-600 hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-md cursor-pointer"
+              >
+                <Icon name="simple-icons:whatsapp" class="text-lg" />
+                <span>Pedir Presupuesto por WhatsApp (1-Clic)</span>
+              </a>
+
+              <p class="text-[11px] text-center text-stone-500 dark:text-stone-400">
+                Se abrirá tu WhatsApp con los datos de tu pieza ya cargados para responderte al momento.
+              </p>
+
+              <!-- Optional fallback toggle to email form -->
+              <div class="pt-1 text-center">
+                <button
+                  type="button"
+                  @click="showEmailFallback = !showEmailFallback"
+                  class="text-xs text-stone-500 dark:text-stone-400 hover:underline cursor-pointer"
+                >
+                  {{ showEmailFallback ? 'Ocultar formulario de email' : '¿Prefieres recibirlo por email? Haz clic aquí' }}
+                </button>
+              </div>
+            </div>
+
+            <!-- Email Form Mode / Fallback -->
+            <div v-if="!features.simulatorDirectWhatsApp || showEmailFallback" class="space-y-3 pt-2 border-t border-stone-100 dark:border-stone-800">
               <div class="space-y-1">
                 <label class="text-xs font-bold text-stone-700 dark:text-stone-300">
-                  Tu Email o Teléfono / WhatsApp *
+                  Tu Email o Teléfono *
                 </label>
                 <input
                   v-model="form.contact"
@@ -237,22 +291,24 @@
                 />
               </div>
 
-              <!-- Field 3: Detalles adicionales -->
-              <div class="space-y-1">
-                <label class="text-xs font-bold text-stone-700 dark:text-stone-300">
-                  Detalles adicionales (Opcional)
-                </label>
-                <textarea
-                  v-model="form.notas"
-                  rows="3"
-                  placeholder="Forma de patas, acabado en cera/aceite, etc."
-                  class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors resize-none"
-                />
-              </div>
+              <button
+                type="button"
+                :disabled="!form.contact || loading"
+                @click="handleSubmit"
+                :class="[
+                  'w-full py-3 px-6 rounded-2xl font-bold text-sm text-white transition-all shadow-sm cursor-pointer flex items-center justify-center gap-2',
+                  form.contact && !loading
+                    ? 'bg-[#D97706] hover:bg-[#B45309]'
+                    : 'bg-stone-300 dark:bg-stone-700 cursor-not-allowed opacity-70'
+                ]"
+              >
+                <Icon v-if="loading" name="mdi:loading" class="animate-spin text-lg" />
+                <span>{{ loading ? 'Enviando...' : 'Enviar por Correo' }}</span>
+              </button>
             </div>
 
-            <!-- Footer Actions -->
-            <div class="pt-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800">
+            <!-- Footer Navigation (Back button) -->
+            <div class="pt-3 flex items-center justify-between border-t border-stone-100 dark:border-stone-800">
               <button
                 type="button"
                 @click="step = 2"
@@ -260,20 +316,12 @@
               >
                 Atrás
               </button>
-
               <button
                 type="button"
-                :disabled="!form.contact || loading"
-                @click="handleSubmit"
-                :class="[
-                  'px-6 py-3 rounded-2xl font-bold text-sm text-white transition-all shadow-sm cursor-pointer flex items-center gap-2',
-                  form.contact && !loading
-                    ? 'bg-[#D97706] hover:bg-[#B45309]'
-                    : 'bg-stone-300 dark:bg-stone-700 cursor-not-allowed opacity-70'
-                ]"
+                @click="closeSimulator"
+                class="px-4 py-2 text-stone-400 hover:text-stone-600 dark:hover:text-stone-300 text-xs transition-colors cursor-pointer"
               >
-                <Icon v-if="loading" name="mdi:loading" class="animate-spin text-lg" />
-                <span>{{ loading ? 'Enviando...' : 'Enviar Solicitud' }}</span>
+                Cancelar
               </button>
             </div>
           </div>
@@ -325,8 +373,10 @@ const openModal = ref(false)
 const step = ref(1)
 const loading = ref(false)
 const submitted = ref(false)
+const showEmailFallback = ref(false)
 
 const { addLead } = useLeads()
+const { features, toggleFeature } = useCraftFeatures()
 
 interface FurnitureOption {
   id: string
@@ -436,6 +486,21 @@ const whatsappDirectUrl = computed(() => {
 - Contacto: ${form.contact}`
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 })
+
+async function recordSimulatorLead(source = 'whatsapp') {
+  try {
+    await addLead({
+      type: 'estimate',
+      contact: form.contact || `WhatsApp Lead (${selectedFurniture.value.title})`,
+      mueble: selectedFurniture.value.title,
+      madera: selectedWood.value.title,
+      medidas: form.medidas || 'A definir con el cliente',
+      notas: `[WhatsApp Directo] ${form.notas || 'Sin notas adicionales'} | Rango: ${estimatedPriceRange.value.min}€ - ${estimatedPriceRange.value.max}€`
+    })
+  } catch (err) {
+    console.error('Error logging WhatsApp lead', err)
+  }
+}
 
 async function handleSubmit() {
   if (!form.contact) return
