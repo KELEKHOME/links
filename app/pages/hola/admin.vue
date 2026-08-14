@@ -181,6 +181,9 @@ useSeoMeta({
         </div>
       </div>
 
+      <!-- Craft & Conversion Features Toggles (Propuestas 1, 2, 3) -->
+      <UiCraftFeaturesSwitcher />
+
       <!-- Filters & Search Bar -->
       <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         <!-- Tabs -->

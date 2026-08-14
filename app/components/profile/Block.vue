@@ -44,24 +44,7 @@
       </span>
     </div>
 
-    <!-- Badge disponible -->
-    <div class="blur-in blur-in-d3 mt-3 flex items-center justify-center gap-2">
-      <NuxtLink
-        to="/hola/marcas"
-        class="group flex items-center gap-2 px-3 py-1.5 rounded-full border border-transparent transition-all duration-300
-               hover:border-green-400/70 hover:bg-green-500/10 hover:shadow-[0_0_14px_rgba(74,222,128,0.25)] hover:-translate-y-0.5"
-      >
-        <span class="relative flex h-2 w-2 shrink-0">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-        </span>
-        <span class="text-xs font-medium text-green-600 dark:text-green-400 transition-colors duration-300 group-hover:text-green-500 dark:group-hover:text-green-300">
-          {{ $t('profile.available') }}
-        </span>
-      </NuxtLink>
-    </div>
-
-    <p class="blur-in blur-in-d4 mt-4 text-base leading-relaxed text-zinc-400 dark:text-zinc-500 max-w-lg mx-auto">
+    <p class="blur-in blur-in-d3 mt-4 text-base leading-relaxed text-zinc-400 dark:text-zinc-500 max-w-lg mx-auto">
       {{ $t('profile.bio') }}
     </p>
 

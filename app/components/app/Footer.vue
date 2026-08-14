@@ -82,8 +82,17 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="pt-6 border-t border-stone-200/60 dark:border-stone-800/60 flex flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-stone-400">
-        <p>© {{ year }} Kelek Home · Hecho con <span style="color: rgb(248 113 113 / var(--tw-text-opacity, 1))">♥</span></p>
+      <div class="pt-6 border-t border-stone-200/60 dark:border-stone-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-stone-400">
+        <div class="flex items-center gap-3">
+          <p>© {{ year }} Kelek Home · Hecho con <span style="color: rgb(248 113 113 / var(--tw-text-opacity, 1))">♥</span></p>
+          <span class="opacity-30">•</span>
+          <NuxtLink
+            to="/hola/marcas"
+            class="hover:text-stone-800 dark:hover:text-stone-200 transition-colors underline-offset-4 hover:underline"
+          >
+            Marcas & Prensa
+          </NuxtLink>
+        </div>
         
         <div class="flex items-center gap-1">
           <div class="hidden sm:flex items-center gap-1">

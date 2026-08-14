@@ -473,15 +473,6 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
 
       <!-- Hero Header Section -->
       <div class="text-center space-y-5 max-w-2xl mx-auto pt-2">
-        <!-- Availability Badge -->
-        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-500/25 text-xs font-semibold tracking-wide shadow-2xs backdrop-blur-xs">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span>Disponible para colaboración y sinergias</span>
-        </div>
-
         <div class="space-y-4">
           <h1 class="text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-50">
             Marcas que Potencian Nuestro Taller
@@ -505,6 +496,17 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                   Equipamiento, acabados y herramientas presentes en nuestro taller
                 </span>
               </div>
+            </div>
+          </div>
+
+          <!-- Availability Badge (Moved below +50 Marcas container with smooth hover micro-interaction) -->
+          <div class="pt-1.5 flex items-center justify-center">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-500/25 text-xs font-semibold tracking-wide shadow-2xs backdrop-blur-xs transition-all duration-500 ease-out hover:-translate-y-0.5 hover:bg-emerald-500/15 hover:border-emerald-500/35 hover:shadow-xs cursor-default select-none">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>Disponible para colaboración y sinergias</span>
             </div>
           </div>
         </div>
