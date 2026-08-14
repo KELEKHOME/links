@@ -12,7 +12,7 @@ const otherContent = computed(() => activeLinks.value.filter(l => l.category ===
 const showToggles = ref(false)
 
 useSeoMeta({
-  title: 'Kelek Home — Mobiliario de Autor & Artesanía',
+  title: 'KELEK HOME - Mobiliario artesanal',
   description: 'Mobiliario artesanal único hecho a mano en madera maciza. Descubre mis links, proyectos, simulador de presupuestos y catálogo.',
   ogTitle: 'Kelek Home',
   ogDescription: 'Piezas únicas, hechas a mano.',
