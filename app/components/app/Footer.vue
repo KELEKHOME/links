@@ -23,7 +23,7 @@
           </div>
 
           <!-- Title -->
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
+          <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
             Acompaña la madera desde su origen
           </h2>
 

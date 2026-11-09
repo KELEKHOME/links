@@ -68,22 +68,22 @@ const classicValues = computed(() => [
     icon: 'mdi:hand-heart-outline',
     title: t('about.val1_title'),
     desc: t('about.val1_desc'),
-    color: '#f59e0b',
-    bg: '#fef3c7'
+    color: '#8A613D',
+    bg: '#F5E8DA'
   },
   {
     icon: 'mdi:tree-outline',
     title: t('about.val2_title'),
     desc: t('about.val2_desc'),
-    color: '#10b981',
-    bg: '#d1fae5'
+    color: '#4C6457',
+    bg: '#DDE6DF'
   },
   {
     icon: 'mdi:star-four-points-outline',
     title: t('about.val3_title'),
     desc: t('about.val3_desc'),
-    color: '#6366f1',
-    bg: '#e0e7ff'
+    color: '#5E5146',
+    bg: '#ECE2D3'
   }
 ])
 </script>
@@ -281,9 +281,9 @@ const classicValues = computed(() => [
 }
 
 .hero-name {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Lato', Arial, sans-serif;
   font-size: clamp(2.8rem, 12vw, 5rem);
-  font-weight: 400;
+  font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 0.92;
 }

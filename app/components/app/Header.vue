@@ -14,7 +14,7 @@
     >
       <!-- Barra animada del tab activo -->
       <span
-        class="pointer-events-none absolute -top-[2.5px] h-[3px] w-5 rounded-full bg-amber-400 shadow-[0_0_8px_2px_rgba(251,191,36,0.55)] z-20"
+        class="pointer-events-none absolute -top-[2.5px] h-[3px] w-5 rounded-full bg-amber-400 shadow-[0_0_8px_2px_rgba(178,131,88,0.55)] z-20"
         :class="[bubbleReady ? 'tab-bubble' : 'opacity-0', isResyncing && 'tab-bubble--instant']"
         :style="{ left: bubbleLeft + 'px' }"
       />
@@ -24,7 +24,7 @@
         class="flex items-center overflow-hidden transition-all duration-500 ease-in-out shrink-0"
         :class="scrolled ? 'max-w-[32px] opacity-100' : 'max-w-0 opacity-0'"
       >
-        <img src="/apple-touch-icon.png" alt="Kelek Home" class="w-6 h-6 rounded-full object-cover shrink-0 ring-1 ring-amber-400/40 shadow-xs" />
+        <img src="/favicon.svg" alt="Kelek Home" class="w-6 h-6 shrink-0" />
       </div>
       <!-- Nav links -->
       <div class="flex items-center">
@@ -49,7 +49,7 @@
           <span
             v-if="!isActive(item.to)"
             class="absolute inset-x-0 inset-y-0.5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-            style="background: radial-gradient(ellipse at 50% 130%, rgb(251 191 36 / 0.16), transparent 65%)"
+            style="background: radial-gradient(ellipse at 50% 130%, rgb(178 131 88 / 0.16), transparent 65%)"
           />
           <span
             class="relative z-10 whitespace-nowrap transition-colors duration-200"
@@ -86,7 +86,7 @@
       >
         <!-- Brand -->
         <div class="flex items-center gap-2">
-          <img src="/apple-touch-icon.png" alt="Kelek Home" class="w-6 h-6 rounded-full object-cover shrink-0 ring-1 ring-amber-400/40 shadow-xs" />
+          <img src="/favicon.svg" alt="Kelek Home" class="w-6 h-6 shrink-0" />
           <Transition
             enter-active-class="transition duration-200 ease-out"
             enter-from-class="opacity-0 -translate-x-2"

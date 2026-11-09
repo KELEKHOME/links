@@ -11,7 +11,7 @@
         <Icon name="mdi:tag-multiple-outline" class="text-base text-amber-600 dark:text-amber-400" />
         <span>Precios Orientativos & Rangos</span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100">
         Guía Transparente de Precios
       </h2>
       <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-lg mx-auto">

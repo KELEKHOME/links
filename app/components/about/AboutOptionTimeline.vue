@@ -58,7 +58,7 @@ const diaryNotes = [
         <span>Diario del Artesano</span>
       </div>
 
-      <h1 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
+      <h1 class="text-3xl sm:text-4xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight leading-tight">
         El Viaje de las Manos y la Madera
       </h1>
 
@@ -96,7 +96,7 @@ const diaryNotes = [
             </span>
           </div>
 
-          <h2 class="text-xl font-serif font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+          <h2 class="text-xl font-serif font-black text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
             {{ item.title }}
           </h2>
         </div>
@@ -122,7 +122,7 @@ const diaryNotes = [
     <section class="space-y-4">
       <div class="flex items-center gap-2">
         <Icon name="mdi:feather" class="text-amber-600 dark:text-amber-400 text-lg" />
-        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">
+        <h3 class="font-serif font-black text-lg text-stone-900 dark:text-stone-100">
           Fragmentos del Cuaderno de Taller
         </h3>
       </div>
@@ -147,7 +147,7 @@ const diaryNotes = [
 
     <!-- Epílogo & Invitación -->
     <section class="p-6 sm:p-8 rounded-3xl bg-stone-900 text-stone-100 border border-stone-800 text-center space-y-4 shadow-xl">
-      <h3 class="font-serif font-bold text-xl text-white">
+      <h3 class="font-serif font-black text-xl text-white">
         El próximo capítulo lo escribimos contigo
       </h3>
       <p class="text-xs text-stone-300 max-w-md mx-auto leading-relaxed">

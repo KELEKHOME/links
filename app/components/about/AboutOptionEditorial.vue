@@ -96,7 +96,7 @@ const principles = [
     <section class="space-y-6">
       <div class="space-y-2">
         <span class="text-[11px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Filosofía de Taller</span>
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">
+        <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100">
           Los Tres Principios de Kelek
         </h2>
         <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-400 leading-relaxed max-w-xl">
@@ -131,7 +131,7 @@ const principles = [
     <!-- El Taller en Cifras -->
     <section class="p-6 sm:p-8 rounded-3xl bg-amber-500/5 dark:bg-stone-900/60 border border-amber-500/20 dark:border-stone-800 space-y-6">
       <div class="text-center space-y-1">
-        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">El Rigor del Tiempo</h3>
+        <h3 class="font-serif font-black text-lg text-stone-900 dark:text-stone-100">El Rigor del Tiempo</h3>
         <p class="text-xs text-stone-500 dark:text-stone-400">Métricas que definen nuestro estándar de ebanistería</p>
       </div>
 
@@ -147,7 +147,7 @@ const principles = [
     <!-- Galería Visual del Proceso -->
     <section class="space-y-4">
       <div class="flex items-center justify-between">
-        <h3 class="text-lg font-serif font-bold text-stone-900 dark:text-stone-100">La Intimidad del Taller</h3>
+        <h3 class="text-lg font-serif font-black text-stone-900 dark:text-stone-100">La Intimidad del Taller</h3>
         <span class="text-xs text-stone-500 dark:text-stone-400">Madrid, España</span>
       </div>
 
@@ -183,7 +183,7 @@ const principles = [
       </div>
 
       <div class="space-y-2 max-w-md mx-auto">
-        <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-100">
+        <h3 class="text-xl sm:text-2xl font-serif font-black text-stone-100">
           Hablemos de tu próximo espacio
         </h3>
         <p class="text-xs text-stone-300 leading-relaxed font-normal">

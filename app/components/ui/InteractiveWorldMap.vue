@@ -70,7 +70,7 @@ function getVisibleMarkers(scale: number) {
         name: m.name,
         coords: m.coords,
         style: {
-          fill: '#f59e0b',
+          fill: '#B28358',
           stroke: '#ffffff',
           strokeWidth: 1.5,
           r: 5.5
@@ -175,19 +175,19 @@ function initMap() {
     regionsSelectableOne: false,
     regionStyle: {
       initial: {
-        fill: '#262626', // stone-800
-        stroke: '#404040', // stone-700
+        fill: '#33312E', // stone-800
+        stroke: '#463D35', // stone-700
         strokeWidth: 0.5,
         fillOpacity: 1
       },
       hover: {
-        fill: '#f59e0b', // amber-500
+        fill: '#B28358', // amber-500
         fillOpacity: 0.9,
         cursor: 'pointer'
       }
     },
     visualizeData: {
-      scale: ['#382008', '#f59e0b'],
+      scale: ['#2A1D12', '#B28358'],
       values: regionValues
     },
     selectedRegions: [],
@@ -201,13 +201,13 @@ function initMap() {
     markerStyle: {
       initial: {
         r: 5,
-        fill: '#f59e0b',
+        fill: '#B28358',
         stroke: '#ffffff',
         strokeWidth: 1.5
       },
       hover: {
         r: 8,
-        fill: '#fbbf24',
+        fill: '#C99F78',
         stroke: '#ffffff',
         strokeWidth: 2,
         cursor: 'pointer'
@@ -218,7 +218,7 @@ function initMap() {
         fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
         fontSize: '11px',
         fontWeight: '800',
-        fill: '#fef08a',
+        fill: '#EAD3BB',
         cursor: 'pointer'
       },
       hover: {
@@ -384,8 +384,8 @@ onUnmounted(() => {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
   font-weight: 800 !important;
   font-size: 11px !important;
-  fill: #fef08a !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.95), 0 0 3px #d97706 !important;
+  fill: #EAD3BB !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.95), 0 0 3px #8A613D !important;
   cursor: pointer !important;
   transition: all 0.2s ease !important;
 }
@@ -399,8 +399,8 @@ onUnmounted(() => {
 }
 
 .jsvectormap-tooltip {
-  background-color: #1c1917 !important;
-  border: 1px solid #78350f !important;
+  background-color: #262624 !important;
+  border: 1px solid #5A3F28 !important;
   border-radius: 12px !important;
   padding: 0 !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7) !important;

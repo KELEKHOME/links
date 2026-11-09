@@ -32,23 +32,15 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'es'
       },
+      meta: [
+        { name: 'theme-color', content: '#F4EDE2', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#262624', media: '(prefers-color-scheme: dark)' }
+      ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', sizes: '32x32' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.png' },
-        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com'
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: ''
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@300;400;500;600;700&display=swap'
-        }
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }
       ]
     }
   },
@@ -90,7 +82,7 @@ export default defineNuxtConfig({
 
   // nuxt-og-image — Open Graph automático
   ogImage: {
-    fonts: ['Public+Sans:400', 'Public+Sans:700'],
+    fonts: ['Lato:400', 'Lato:700', 'Lato:900'],
   },
 
   umami: {

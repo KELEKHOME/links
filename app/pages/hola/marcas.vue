@@ -614,7 +614,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                         target="_blank"
                         rel="noopener noreferrer"
                         @click.stop
-                        class="brand-title-link font-serif font-bold text-base text-stone-900 dark:text-white leading-tight hover:underline transition-colors cursor-pointer inline-flex items-center gap-1.5 group/title truncate"
+                        class="brand-title-link font-serif font-black text-base text-stone-900 dark:text-white leading-tight hover:underline transition-colors cursor-pointer inline-flex items-center gap-1.5 group/title truncate"
                         :title="`Visitar sitio web oficial de ${brand.name}`"
                       >
                         <span class="truncate">{{ brand.name }}</span>
@@ -717,7 +717,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                 🤝 SINERGIA & PARTNERSHIP
               </span>
 
-              <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white leading-tight">
+              <h3 class="text-2xl sm:text-3xl font-serif font-black text-white leading-tight">
                 ¡Impulsamos el valor de tus productos!
               </h3>
 
@@ -762,7 +762,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
       <div class="p-6 sm:p-8 rounded-[32px] bg-white dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800/90 shadow-2xs space-y-7">
         <div class="flex items-center justify-between flex-wrap gap-3 border-b border-stone-100 dark:border-stone-800 pb-5">
           <div class="space-y-1">
-            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
+            <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 flex items-center gap-2">
               <span>Audiencia / Audience</span>
               <span class="text-2xl">🔎</span>
             </h2>
@@ -1031,7 +1031,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                   <Icon name="mdi:earth" class="text-amber-600 dark:text-amber-400" />
                   <span>Mapa Interactivo de Alcance</span>
                 </div>
-                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100">
+                <h3 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100">
                   Comunidad Mundial & Desglose
                 </h3>
                 <p class="text-xs text-stone-500 dark:text-stone-400">
@@ -1128,7 +1128,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                   <div class="flex items-center gap-3">
                     <span class="text-3xl">{{ activeCountry.flag }}</span>
                     <div>
-                      <h4 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                      <h4 class="font-serif font-black text-lg text-stone-900 dark:text-stone-100 flex items-center gap-2">
                         <span>{{ activeCountry.name }}</span>
                         <span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-900 dark:text-amber-300 font-bold border border-amber-500/30">
                           {{ activeCountry.percentage }}% del Alcance
@@ -1201,7 +1201,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
       <div class="space-y-5">
         <div class="text-center space-y-1.5 max-w-xl mx-auto">
           <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Modalidades de Trabajo</span>
-          <h2 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+          <h2 class="text-xl sm:text-2xl font-serif font-black text-stone-900 dark:text-stone-100">
             ¿Cómo Podemos Colaborar?
           </h2>
           <p class="text-xs text-stone-500 dark:text-stone-400">
@@ -1252,7 +1252,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
             <span>¿Cómo Podemos Ayudarte?</span>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
+          <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight leading-snug">
             Preguntas Frecuentes de Marcas
           </h2>
         </div>
@@ -1373,7 +1373,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
                     </span>
                   </div>
 
-                  <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-white leading-tight">
+                  <h3 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-white leading-tight">
                     {{ selectedBrandModal.name }}
                   </h3>
 
@@ -1417,7 +1417,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
 
               <!-- Partnership Benefits List -->
               <div v-if="selectedBrandModal.partnershipBenefits && selectedBrandModal.partnershipBenefits.length" class="space-y-2.5 pt-1">
-                <h4 class="font-serif font-bold text-sm sm:text-base text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                <h4 class="font-serif font-black text-sm sm:text-base text-stone-900 dark:text-stone-100 flex items-center gap-2">
                   <Icon name="mdi:handshake-outline" class="text-amber-500 text-lg" />
                   <span>Beneficios de la Alianza & Integración</span>
                 </h4>
@@ -1436,7 +1436,7 @@ const ageGroupDetails: Record<string, { title: string; desc: string }> = {
 
               <!-- Impact Metrics & Stats -->
               <div v-if="selectedBrandModal.statsOrImpact && selectedBrandModal.statsOrImpact.length" class="space-y-2 pt-1">
-                <h4 class="font-serif font-bold text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">
+                <h4 class="font-serif font-black text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400">
                   Impacto & Rendimiento Comprobado
                 </h4>
 
