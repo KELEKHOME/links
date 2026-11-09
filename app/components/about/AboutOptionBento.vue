@@ -84,7 +84,7 @@ const tools = [
 
           <div class="space-y-2 flex-1">
             <div class="flex items-center gap-2 flex-wrap">
-              <h2 class="text-2xl font-serif font-bold text-white">Jesús Iglesias</h2>
+              <h2 class="text-2xl font-serif font-black text-white">Jesús Iglesias</h2>
               <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-medium">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Taller Abierto
@@ -102,7 +102,7 @@ const tools = [
         <div class="flex items-center justify-between gap-2 flex-wrap">
           <div class="space-y-0.5">
             <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Materia Prima Viva</span>
-            <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Muestrario de Maderas de Taller</h3>
+            <h3 class="font-serif font-black text-lg text-stone-900 dark:text-stone-100">Muestrario de Maderas de Taller</h3>
           </div>
           <span class="text-[11px] text-stone-500 dark:text-stone-400">Toca para inspeccionar</span>
         </div>
@@ -136,7 +136,7 @@ const tools = [
           </div>
           <div class="space-y-1.5 flex-1 w-full text-left">
             <div class="flex items-center justify-between">
-              <h4 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">{{ selectedWood.name }}</h4>
+              <h4 class="font-serif font-black text-base text-stone-900 dark:text-stone-100">{{ selectedWood.name }}</h4>
               <span class="text-[11px] font-semibold text-amber-600 dark:text-amber-400">{{ selectedWood.hardness }}</span>
             </div>
             <p class="text-xs text-stone-600 dark:text-stone-300"><strong class="font-semibold text-stone-800 dark:text-stone-200">Tonalidad:</strong> {{ selectedWood.tone }}</p>
@@ -149,7 +149,7 @@ const tools = [
       <div class="p-5 sm:p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 shadow-2xs space-y-4">
         <div class="space-y-1">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">El Oficio</span>
-          <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">Herramientas Esenciales</h3>
+          <h3 class="font-serif font-black text-base text-stone-900 dark:text-stone-100">Herramientas Esenciales</h3>
         </div>
         <div class="space-y-2.5">
           <div v-for="t in tools" :key="t.name" class="flex items-center gap-3 p-2 rounded-xl bg-stone-50 dark:bg-stone-950/60 border border-stone-100 dark:border-stone-800/80">
@@ -170,7 +170,7 @@ const tools = [
           <div class="w-10 h-10 rounded-2xl bg-amber-500 text-stone-950 flex items-center justify-center text-xl font-bold shadow-md">
             <Icon name="mdi:shield-check-outline" />
           </div>
-          <h3 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100">
+          <h3 class="font-serif font-black text-base text-stone-900 dark:text-stone-100">
             Garantía Generacional
           </h3>
           <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
@@ -187,7 +187,7 @@ const tools = [
       <!-- Card 5: Banner de Contacto Directo (Full Width) -->
       <div class="sm:col-span-2 p-6 rounded-3xl bg-stone-900 text-white border border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
         <div class="space-y-1 text-center sm:text-left">
-          <h4 class="font-serif font-bold text-base text-white">¿Tienes un espacio o proyecto en mente?</h4>
+          <h4 class="font-serif font-black text-base text-white">¿Tienes un espacio o proyecto en mente?</h4>
           <p class="text-xs text-stone-400">Diseño a medida según tus medidas exactas y maderas preferidas.</p>
         </div>
 

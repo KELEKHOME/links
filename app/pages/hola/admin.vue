@@ -129,28 +129,28 @@ useSeoMeta({
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
           <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Total Leads</span>
-          <p class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100 mt-0.5">
+          <p class="text-2xl font-serif font-black text-stone-900 dark:text-stone-100 mt-0.5">
             {{ stats.total }}
           </p>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-amber-500/30 dark:border-amber-500/20 bg-amber-500/5">
           <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">Presupuestos</span>
-          <p class="text-2xl font-serif font-bold text-amber-800 dark:text-amber-300 mt-0.5">
+          <p class="text-2xl font-serif font-black text-amber-800 dark:text-amber-300 mt-0.5">
             {{ stats.estimates }}
           </p>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-emerald-500/30 dark:border-emerald-500/20 bg-emerald-500/5">
           <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">Guías Solicitadas</span>
-          <p class="text-2xl font-serif font-bold text-emerald-800 dark:text-emerald-300 mt-0.5">
+          <p class="text-2xl font-serif font-black text-emerald-800 dark:text-emerald-300 mt-0.5">
             {{ stats.guides }}
           </p>
         </div>
 
         <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
           <span class="text-[10px] font-bold uppercase tracking-wider text-stone-400">Pendientes</span>
-          <p class="text-2xl font-serif font-bold text-amber-600 dark:text-amber-400 mt-0.5">
+          <p class="text-2xl font-serif font-black text-amber-600 dark:text-amber-400 mt-0.5">
             {{ stats.pending }}
           </p>
         </div>

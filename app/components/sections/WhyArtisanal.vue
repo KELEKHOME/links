@@ -11,7 +11,7 @@
       <div class="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">
         FILOSOFÍA & COMPROMISO
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight">
         ¿Por qué artesanal?
       </h2>
       <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-md mx-auto">

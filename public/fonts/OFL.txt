@@ -1,0 +1,3 @@
+Lato es una familia tipográfica libre.
+Copyright 2010-2014 Lukasz Dziedzic (tyPoland), con nombre reservado "Lato".
+Licencia: SIL Open Font License 1.1 (https://openfontlicense.org). Puedes usarla y redistribuirla, también en proyectos comerciales.

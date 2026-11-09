@@ -36,7 +36,7 @@
     </div>
 
     <div class="blur-in blur-in-d2 mt-5 flex flex-col items-center leading-tight">
-      <span class="text-2xl text-zinc-500 dark:text-zinc-400" style="font-family: 'Instrument Serif', serif; font-style: italic;">
+      <span class="text-2xl font-light italic text-zinc-500 dark:text-zinc-400">
         Bienvenidos a
       </span>
       <span class="text-5xl font-bold tracking-tight">

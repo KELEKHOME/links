@@ -323,7 +323,7 @@ function getWhatsAppProjectUrl(project: ProjectItem) {
               <span class="px-2.5 py-0.5 rounded-md bg-amber-500/10 text-amber-800 dark:text-amber-300 text-[10px] font-bold uppercase tracking-wider">
                 {{ selectedProject.wood }}
               </span>
-              <h2 class="text-2xl font-serif font-bold text-stone-900 dark:text-stone-100">
+              <h2 class="text-2xl font-serif font-black text-stone-900 dark:text-stone-100">
                 {{ selectedProject.title }}
               </h2>
             </div>

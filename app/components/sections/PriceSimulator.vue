@@ -13,13 +13,13 @@
     >
       <div class="flex items-center gap-4 min-w-0">
         <!-- Ruler Square Icon Badge -->
-        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#FFF4E8] dark:bg-amber-950/50 text-[#9A4212] dark:text-amber-400 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-400 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
           <Icon name="mdi:ruler-square" class="text-2xl sm:text-3xl" />
         </div>
 
         <!-- Content -->
         <div class="space-y-1 min-w-0">
-          <div class="inline-flex items-center px-2.5 py-0.5 rounded-md bg-[#FFF4E8] dark:bg-amber-950/50 text-[#9A4212] dark:text-amber-400 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
+          <div class="inline-flex items-center px-2.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-400 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
             SIMULADOR INTERACTIVO · 1 MINUTO
           </div>
 
@@ -67,11 +67,11 @@
 
           <!-- Header -->
           <div class="space-y-1 pr-8">
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFF4E8] dark:bg-amber-950/60 text-[#9A4212] dark:text-amber-400 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-400 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
               <Icon name="mdi:hammer-wrench" class="text-xs" />
               <span>PRESUPUESTO PERSONALIZADO</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+            <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight">
               Configura tu pieza a medida
             </h2>
           </div>
@@ -80,15 +80,15 @@
           <div v-if="!submitted" class="flex items-center gap-2 pt-1">
             <div
               class="h-1.5 rounded-full flex-1 transition-all duration-300"
-              :class="step >= 1 ? 'bg-[#D97706]' : 'bg-stone-200 dark:bg-stone-800'"
+              :class="step >= 1 ? 'bg-amber-600' : 'bg-stone-200 dark:bg-stone-800'"
             />
             <div
               class="h-1.5 rounded-full flex-1 transition-all duration-300"
-              :class="step >= 2 ? 'bg-[#D97706]' : 'bg-stone-200 dark:bg-stone-800'"
+              :class="step >= 2 ? 'bg-amber-600' : 'bg-stone-200 dark:bg-stone-800'"
             />
             <div
               class="h-1.5 rounded-full flex-1 transition-all duration-300"
-              :class="step >= 3 ? 'bg-[#D97706]' : 'bg-stone-200 dark:bg-stone-800'"
+              :class="step >= 3 ? 'bg-amber-600' : 'bg-stone-200 dark:bg-stone-800'"
             />
           </div>
 
@@ -107,11 +107,11 @@
                 :class="[
                   'p-4 sm:p-5 rounded-2xl border text-left transition-all duration-200 flex flex-col justify-between gap-3 cursor-pointer relative',
                   selectedFurniture.id === item.id
-                    ? 'border-[#D97706] bg-[#FFFBF5] dark:bg-amber-950/20 shadow-xs ring-1 ring-[#D97706]'
+                    ? 'border-amber-600 bg-amber-50 dark:bg-amber-950/20 shadow-xs ring-1 ring-amber-600'
                     : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 hover:border-amber-500/50'
                 ]"
               >
-                <div class="p-2.5 rounded-xl bg-amber-500/10 text-[#D97706] dark:text-amber-400 w-fit">
+                <div class="p-2.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 w-fit">
                   <Icon :name="item.icon" class="text-2xl" />
                 </div>
                 <div>
@@ -130,7 +130,7 @@
               <button
                 type="button"
                 @click="step = 2"
-                class="px-6 py-3 rounded-2xl font-bold text-sm text-white bg-[#D97706] hover:bg-[#B45309] transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                class="px-6 py-3 rounded-2xl font-bold text-sm text-white bg-amber-600 hover:bg-amber-700 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
               >
                 <span>Siguiente</span>
                 <Icon name="mdi:arrow-right" class="text-lg" />
@@ -153,7 +153,7 @@
                 :class="[
                   'p-4 sm:p-5 rounded-2xl border text-left transition-all duration-200 flex flex-col justify-between gap-3 cursor-pointer relative',
                   selectedWood.id === wood.id
-                    ? 'border-[#D97706] bg-[#FFFBF5] dark:bg-amber-950/20 shadow-xs ring-1 ring-[#D97706]'
+                    ? 'border-amber-600 bg-amber-50 dark:bg-amber-950/20 shadow-xs ring-1 ring-amber-600'
                     : 'border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 hover:border-amber-500/50'
                 ]"
               >
@@ -184,7 +184,7 @@
               <button
                 type="button"
                 @click="step = 3"
-                class="px-6 py-3 rounded-2xl font-bold text-sm text-white bg-[#D97706] hover:bg-[#B45309] transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                class="px-6 py-3 rounded-2xl font-bold text-sm text-white bg-amber-600 hover:bg-amber-700 transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
               >
                 <span>Siguiente</span>
                 <Icon name="mdi:arrow-right" class="text-lg" />
@@ -212,11 +212,11 @@
             </div>
 
             <!-- Price estimate pill badge -->
-            <div class="p-3.5 rounded-2xl bg-[#FFFBF5] dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/60 flex items-center justify-between text-xs sm:text-sm">
+            <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/60 flex items-center justify-between text-xs sm:text-sm">
               <span class="text-stone-600 dark:text-stone-300 font-medium">
                 Estimación orientativa ({{ selectedFurniture.title }} + {{ selectedWood.title }}):
               </span>
-              <span class="font-bold text-[#D97706] dark:text-amber-400 text-base">
+              <span class="font-bold text-amber-600 dark:text-amber-400 text-base">
                 {{ estimatedPriceRange.min }}€ – {{ estimatedPriceRange.max }}€
               </span>
             </div>
@@ -230,7 +230,7 @@
                 v-model="form.medidas"
                 type="text"
                 placeholder="Ej: 180 x 90 x 75 cm o 'Para 6 personas'"
-                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors"
+                class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-amber-600 transition-colors"
               />
             </div>
 
@@ -243,7 +243,7 @@
                 v-model="form.notas"
                 rows="2"
                 placeholder="Ej: Borde biselado, acabado mate, espacio disponible..."
-                class="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors resize-none"
+                class="w-full px-4 py-2.5 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-amber-600 transition-colors resize-none"
               />
             </div>
 
@@ -287,7 +287,7 @@
                   type="text"
                   required
                   placeholder="ejemplo@correo.com o +34 600 000 000"
-                  class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-[#D97706] transition-colors"
+                  class="w-full px-4 py-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-950/50 text-sm text-stone-900 dark:text-stone-100 placeholder:text-stone-400 outline-none focus:border-amber-600 transition-colors"
                 />
               </div>
 
@@ -298,7 +298,7 @@
                 :class="[
                   'w-full py-3 px-6 rounded-2xl font-bold text-sm text-white transition-all shadow-sm cursor-pointer flex items-center justify-center gap-2',
                   form.contact && !loading
-                    ? 'bg-[#D97706] hover:bg-[#B45309]'
+                    ? 'bg-amber-600 hover:bg-amber-700'
                     : 'bg-stone-300 dark:bg-stone-700 cursor-not-allowed opacity-70'
                 ]"
               >

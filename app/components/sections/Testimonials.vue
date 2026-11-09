@@ -33,7 +33,7 @@
           <div class="text-[10px] font-bold uppercase tracking-wider text-amber-900/90 dark:text-amber-400">
             PIEZAS EN SU NUEVO HOGAR
           </div>
-          <h2 class="text-lg sm:text-xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+          <h2 class="text-lg sm:text-xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight">
             Lo que dicen quienes ya conviven con Kelek Home
           </h2>
         </div>

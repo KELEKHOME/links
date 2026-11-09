@@ -11,7 +11,7 @@
       <div class="text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">
         RIGOR & OFICIO
       </div>
-      <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 dark:text-stone-100 tracking-tight">
+      <h2 class="text-2xl sm:text-3xl font-serif font-black text-stone-900 dark:text-stone-100 tracking-tight">
         Mi proceso en el taller
       </h2>
       <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-md mx-auto">
@@ -86,7 +86,7 @@
             <div class="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
               {{ currentStep.num }}
             </div>
-            <h3 class="font-serif font-bold text-stone-900 dark:text-stone-100 text-base">
+            <h3 class="font-serif font-black text-stone-900 dark:text-stone-100 text-base">
               {{ currentStep.title }}
             </h3>
           </div>

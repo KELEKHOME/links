@@ -56,7 +56,7 @@
           </div>
 
           <!-- Title -->
-          <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
+          <h3 class="text-lg sm:text-xl font-serif font-black text-stone-900 dark:text-stone-100 leading-snug tracking-tight">
             Guía de Mantenimiento y Cuidado de la Madera Maciza
           </h3>
 
